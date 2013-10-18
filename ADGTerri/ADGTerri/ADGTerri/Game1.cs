@@ -16,6 +16,7 @@ namespace ADGTerri
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        //constants to define Client Screen size
         public const int SCREEN_HEIGHT = 600;
         public const int SCREEN_WIDTH = 800;
 
@@ -37,6 +38,7 @@ namespace ADGTerri
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            //Assign Client screen size
             graphics.PreferredBackBufferHeight = SCREEN_HEIGHT;
             graphics.PreferredBackBufferWidth = SCREEN_WIDTH;
         }
@@ -55,6 +57,7 @@ namespace ADGTerri
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            //Load generic test sprite
             sprite = Content.Load<Texture2D>("sprite");
             spritePos = new Vector2(400, 300);
 

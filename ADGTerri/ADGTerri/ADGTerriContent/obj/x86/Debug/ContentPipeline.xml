@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\bg.xnb</Output>
-      <Time>2013-10-18T19:36:51.1793792-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\bg.xnb</Output>
+      <Time>2013-10-18T19:46:47.9647025-04:00</Time>
     </Item>
     <Item>
       <Source>sprite.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\sprite.xnb</Output>
-      <Time>2013-10-18T19:36:51.1823793-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\sprite.xnb</Output>
+      <Time>2013-10-18T19:46:47.9697028-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -25,10 +25,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerriContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -57,7 +57,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-10-18T11:51:09.841127-04:00</Value>
+        <Value>2012-06-13T07:54:35.2622354-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
