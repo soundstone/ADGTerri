@@ -1,0 +1,2 @@
+Content\bg.xnb
+Content\sprite.xnb
