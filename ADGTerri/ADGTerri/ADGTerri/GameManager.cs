@@ -68,10 +68,8 @@ namespace ADGTerri
         {
             Level level = new Level(Game1.bg);
 
-            //Level 1 Background
-           // Levels.Add(new Level(new Vector2(400,300), Game1.bg, Game1.playerTex));
             Levels.Add(level);
-            level.Actors.Add(new Player(new Vector2(400, 300), Game1.playerTex));
+            level.Actors.Add(new Player(new Vector2(400, 300)));
 
             level.player = level.Actors[level.Actors.Count - 1] as Player;
         }

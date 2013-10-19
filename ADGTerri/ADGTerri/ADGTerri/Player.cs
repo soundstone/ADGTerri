@@ -48,10 +48,10 @@ namespace ADGTerri
 
         #region Ctor
 
-        public Player(Vector2 position, Texture2D playerTex)
+        public Player(Vector2 position)
             :base(position)
         {
-            this.playerTexture = playerTex;
+            this.playerTexture = Game1.playerTex;
             this.playerPos = position;
         }
 

@@ -27,8 +27,6 @@ namespace ADGTerri
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Game1.SprSinglePixel, Camera2.Position, drawArea, Color.White, 0f,
-                Vector2.Zero, 1f, SpriteEffects.None, layerDepth);
         }
     }
 }

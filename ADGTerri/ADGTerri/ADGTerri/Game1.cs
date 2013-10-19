@@ -11,9 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace ADGTerri
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
+   
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         #region Variables and Properties
@@ -31,16 +29,17 @@ namespace ADGTerri
         public static SpriteFont fontLarge;
 
         public static Texture2D SprSinglePixel;
-        //KeyboardState curKeyboardState;
 
-        //Camera m_camera;
+        Camera m_camera;
 
         Level[] level = new Level[5];
 
         public static Texture2D bg;
         public static Texture2D playerTex;
 
-        //Player player;
+        Player player;
+        Vector2 playerStartPosition;
+        Texture2D playerTexture;
 
         #endregion
 
@@ -58,14 +57,10 @@ namespace ADGTerri
         {
             exitGame = false;
             IsMouseVisible = true;
-            Window.Title = "Thanksgiving Run";
-
-            //initialize level1
-            //level[0] = new Level(new Vector2(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 300), Content.Load<Texture2D>("bg"), 
-              // Content.Load<Texture2D>("sprite") );
+            Window.Title = "Thanksgiving Run";            
 
             //initialize camera
-            //m_camera = new Camera(GraphicsDevice.Viewport);
+            m_camera = new Camera(GraphicsDevice.Viewport);
 
             base.Initialize();
         }
@@ -81,6 +76,7 @@ namespace ADGTerri
             SprSinglePixel = Content.Load<Texture2D>(@"Textures\SinglePixel");
             bg = Content.Load<Texture2D>(@"Textures\bg");
             playerTex = Content.Load<Texture2D>(@"Textures\sprite");
+            player = new Player(playerStartPosition);
 
             MenuManager.CreateMenuItems();
             
@@ -101,7 +97,10 @@ namespace ADGTerri
                 this.Exit();
 
             InputHelper.UpdateStates();
-            GameManager.Update(gameTime);   
+            GameManager.Update(gameTime);
+
+            player.Update(gameTime);
+            m_camera.Update(gameTime, player);
 
             base.Update(gameTime);
         }
@@ -110,10 +109,14 @@ namespace ADGTerri
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, m_camera.transform);
             spriteBatchHUD.Begin();
-            //spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, m_camera.transform);
+            
             GameManager.Draw(spriteBatch, spriteBatchHUD);
+            
+            if(GameManager.gameState == GameState.Playing)
+                player.Draw(spriteBatch);
+            
             spriteBatch.End();
             spriteBatchHUD.End();
 
