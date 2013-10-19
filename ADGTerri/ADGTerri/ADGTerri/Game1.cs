@@ -117,7 +117,7 @@ namespace ADGTerri
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, m_camera.transform);
-            spriteBatch.Draw(bg, new Vector2(0, -1400), Color.White);
+            spriteBatch.Draw(bg, new Vector2(0, SCREEN_HEIGHT-bg.Height), Color.White);
             spriteBatch.Draw(sprite, spritePos, Color.White);
             spriteBatch.End();
 
