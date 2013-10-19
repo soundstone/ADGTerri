@@ -29,6 +29,17 @@ namespace ADGTerri
 
         Texture2D bg;
 
+        Texture2D platformSmall;
+        Vector2 platformPos;
+        Rectangle platformRect;
+
+        Texture2D platformMed;
+        Vector2 medPos;
+        Rectangle medRect;
+
+        Texture2D platformLarge;
+        Vector2 largePos;
+
         Texture2D sprite;
         public Rectangle spriteRect;
         public Vector2 spritePos;
@@ -50,12 +61,25 @@ namespace ADGTerri
             m_camera = new Camera(GraphicsDevice.Viewport);
 
             base.Initialize();
+
+            medRect = new Rectangle((int)medPos.X, (int)medPos.Y, platformMed.Width, platformMed.Height);
+            platformRect = new Rectangle((int)platformPos.X, (int)platformPos.Y, platformSmall.Width, platformSmall.Height);
         }
 
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            //load small platform sprite
+            platformSmall = Content.Load<Texture2D>("platformSmall");
+            platformPos = new Vector2(50, SCREEN_HEIGHT - 120);
+
+            platformMed = Content.Load<Texture2D>("platformMedium");
+            medPos = new Vector2(200, SCREEN_HEIGHT - 200);
+
+            platformLarge = Content.Load<Texture2D>("platformLarge");
+            largePos = new Vector2(400, SCREEN_HEIGHT - 300);
 
             //Load generic test sprite
             sprite = Content.Load<Texture2D>("sprite");
@@ -84,8 +108,6 @@ namespace ADGTerri
 
             spriteRect = new Rectangle((int)spritePos.X, (int)spritePos.Y, sprite.Width, sprite.Height);
 
-
-
             //"Gravity"
             spritePos.Y += 5;
 
@@ -108,6 +130,8 @@ namespace ADGTerri
             if (spritePos.Y + spriteRect.Height > SCREEN_HEIGHT)
                 spritePos.Y = SCREEN_HEIGHT - spriteRect.Height;
 
+            PlatformCollision();
+            
             m_camera.Update(gameTime, this);
             base.Update(gameTime);
         }
@@ -118,10 +142,34 @@ namespace ADGTerri
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, m_camera.transform);
             spriteBatch.Draw(bg, new Vector2(0, SCREEN_HEIGHT-bg.Height), Color.White);
+            spriteBatch.Draw(platformSmall, platformPos, Color.White);
+            spriteBatch.Draw(platformMed, medPos, Color.White);
+            spriteBatch.Draw(platformLarge, largePos, Color.White);
             spriteBatch.Draw(sprite, spritePos, Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
+
+        //simple platform collision
+        //Needs to be tweeked for better accuracy
+        void PlatformCollision()
+        { 
+            //Small Platform collision
+            if (spritePos.X + 30 >= platformPos.X && spritePos.X + 30 <= platformPos.X + platformSmall.Width)
+                 if(spritePos.Y + sprite.Height >= platformPos.Y && spritePos.Y + sprite.Height <= platformPos.Y + platformSmall.Height)
+                    spritePos.Y = platformPos.Y - sprite.Height;
+
+            //Medium Platform Collision
+            if (spritePos.X + 30 >= medPos.X && spritePos.X + 30 <= medPos.X + platformMed.Width)
+                if (spritePos.Y + sprite.Height >= medPos.Y && spritePos.Y + sprite.Height <= medPos.Y + platformMed.Height)
+                    spritePos.Y = medPos.Y - sprite.Height;
+
+            //Large Platform Collision
+            if (spritePos.X + 30 >= largePos.X && spritePos.X + 30 <= largePos.X + platformLarge.Width)
+                if (spritePos.Y + sprite.Height >= largePos.Y && spritePos.Y + sprite.Height <= largePos.Y + platformLarge.Height)
+                    spritePos.Y = largePos.Y - sprite.Height;
+        }
+
     }
 }

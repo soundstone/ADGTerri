@@ -1,2 +1,5 @@
 Content\bg.xnb
 Content\sprite.xnb
+Content\platformSmall.xnb
+Content\platformMedium.xnb
+Content\platformLarge.xnb

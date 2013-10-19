@@ -19,6 +19,33 @@
       <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\sprite.xnb</Output>
       <Time>2013-10-18T19:46:47.9697028-04:00</Time>
     </Item>
+    <Item>
+      <Source>platformSmall.png</Source>
+      <Name>platformSmall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\platformSmall.xnb</Output>
+      <Time>2013-10-19T07:29:38.0322909-04:00</Time>
+    </Item>
+    <Item>
+      <Source>platformMedium.png</Source>
+      <Name>platformMedium</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\platformMedium.xnb</Output>
+      <Time>2013-10-19T08:37:05.4887922-04:00</Time>
+    </Item>
+    <Item>
+      <Source>platformLarge.png</Source>
+      <Name>platformLarge</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\platformLarge.xnb</Output>
+      <Time>2013-10-19T08:36:28.4506737-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
