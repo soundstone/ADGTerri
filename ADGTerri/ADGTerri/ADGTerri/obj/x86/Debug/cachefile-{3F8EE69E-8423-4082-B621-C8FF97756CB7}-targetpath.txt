@@ -3,3 +3,4 @@ Content\Textures\sprite.xnb
 Content\Textures\SinglePixel.xnb
 Content\Fonts\FontLarge.xnb
 Content\Fonts\FontSmall.xnb
+Content\Fonts\TitleFont.xnb

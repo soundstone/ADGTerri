@@ -53,7 +53,7 @@ namespace ADGTerri
 
                 case GameState.HowToPlay:
                     spriteBatchHUD.Draw(Game1.SprSinglePixel, new Rectangle(0, 0, Game1.SCREEN_WIDTH, Game1.SCREEN_HEIGHT), Color.DarkGreen);
-                    spriteBatchHUD.DrawString(Game1.fontLarge, "HTP Screen", new Vector2(179, 540), Color.White);
+                    spriteBatchHUD.DrawString(Game1.fontLarge, "HTP Screen", new Vector2(160, 100), Color.White);
 
                     break;
 

@@ -27,6 +27,7 @@ namespace ADGTerri
 
         public static SpriteFont fontSmall;
         public static SpriteFont fontLarge;
+        public static SpriteFont titleFont;
 
         public static Texture2D SprSinglePixel;
 
@@ -73,6 +74,7 @@ namespace ADGTerri
 
             fontLarge = Content.Load<SpriteFont>(@"Fonts\FontLarge");
             fontSmall = Content.Load<SpriteFont>(@"Fonts\FontSmall");
+            titleFont = Content.Load<SpriteFont>(@"Fonts\TitleFont");
             SprSinglePixel = Content.Load<Texture2D>(@"Textures\SinglePixel");
             bg = Content.Load<Texture2D>(@"Textures\bg");
             playerTex = Content.Load<Texture2D>(@"Textures\sprite");
