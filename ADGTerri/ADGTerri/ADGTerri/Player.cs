@@ -9,35 +9,55 @@ using Microsoft.Xna.Framework.Content;
 
 namespace ADGTerri
 {
-    public class Player
+    public enum PlayerState
+    {
+        Idle,
+        Walking,
+        Jumping
+    };
+
+    public class Player : Actor
     {
         #region Variables
 
         const int SCREEN_WIDTH = 800;
         const int SCREEN_HEIGHT = 600;
         const int floorLevel = -1325;
-        
+
+        public PlayerState state;
+
         Texture2D playerTexture;
         public Rectangle playerRect;
         public Vector2 playerPos;
+        float speed;
+        float layerDepth;
 
+        #region Physics Variables
+
+        //initial gravity velocity
+        Vector2 GRAVITY = new Vector2(0f, 9.80f);
+        Vector2 velocity;
+
+        #endregion
+
+
+        //movement
+        Vector2 jumpingPosition;
+        float landingHeight; //need to know where landing of jump is
         #endregion
 
         #region Ctor
 
-        public Player()
+        public Player(Vector2 position, Texture2D playerTex)
+            :base(position)
         {
+            this.playerTexture = playerTex;
+            this.playerPos = position;
         }
 
         #endregion
 
         #region XNA Methods
-
-        public void LoadContent(ContentManager content)
-        {
-            playerTexture = content.Load<Texture2D>("sprite");
-            playerPos = new Vector2(400, 300);
-        }
 
         public Vector2 PlayerPos
         {
@@ -54,8 +74,26 @@ namespace ADGTerri
             get { return playerTexture.Height; }
         }
 
-        public void Update(GameTime gameTime, GraphicsDevice device, KeyboardState keystate)
+        public override void Update(GameTime gameTime)
         {
+            
+            //move in desired direction
+            if (InputHelper.NGS.ThumbSticks.Left.X > 0.3
+                || InputHelper.WasKeyPressed(Keys.D))
+                this.playerPos.X += 5;
+            if (InputHelper.NGS.ThumbSticks.Left.X < -0.3
+                || InputHelper.WasKeyPressed(Keys.A))
+                this.playerPos.X -= 5;
+            if (InputHelper.WasButtonPressed(Buttons.A) 
+                || InputHelper.WasKeyPressed(Keys.W))
+                this.playerPos.Y += velocity.Y;
+            if (InputHelper.IsKeyHeld(Keys.A))
+                this.playerPos.X -= 5;
+            if (InputHelper.IsKeyHeld(Keys.D))
+                this.playerPos.X += 5;
+            if (InputHelper.IsKeyHeld(Keys.W))
+                this.playerPos.Y -= 10;
+
             //Players collision
             #region Collision
 
@@ -72,32 +110,46 @@ namespace ADGTerri
                 playerPos.Y = SCREEN_HEIGHT - Height;
             #endregion
 
-            //gravity on player 
-            #region Gravity
-            //TODO: apply physics here - high priority
+            ////gravity on player 
+            //#region Gravity
+            ////TODO: apply physics here - high priority
             playerPos.Y += 5;
+            ////delta time 1.0f / 1 second
+            //float dT = (float)gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            //velocity += GRAVITY * dT;
+            //playerPos += velocity * dT;
             
-            #endregion 
+            //#endregion 
 
-            //Players input controls
-            #region Input
-            
-            //TODO: fix jump here - high priority
-            if (keystate.IsKeyDown(Keys.W))
-                playerPos.Y -= 10;
-            if (keystate.IsKeyDown(Keys.D))
-                playerPos.X += 5;
-            if (keystate.IsKeyDown(Keys.A))
-                playerPos.X -= 5;
+            //Movement
 
-            #endregion
+            KeyboardState keystate = Keyboard.GetState();
+            switch (state)
+            {
+                case PlayerState.Idle:
+                case PlayerState.Walking:
+                    if (keystate.IsKeyDown(Keys.A))
+                    {
+                        landingHeight = playerPos.Y;
+                        jumpingPosition = playerPos;
+                        
+                    }
+                    break;
+                case PlayerState.Jumping:
+                    break;
+            }
+
+            base.Update(gameTime);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(playerTexture, playerPos, Color.White);
+            base.Draw(spriteBatch);
         }
 
         #endregion
+
+
     }
 }

@@ -23,14 +23,24 @@ namespace ADGTerri
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SpriteBatch spriteBatchHUD;
 
-        KeyboardState curKeyboardState;
+        static bool exitGame;
 
-        Camera m_camera;
+        public static SpriteFont fontSmall;
+        public static SpriteFont fontLarge;
 
-        Texture2D bg;
+        public static Texture2D SprSinglePixel;
+        //KeyboardState curKeyboardState;
 
-        Player player;
+        //Camera m_camera;
+
+        Level[] level = new Level[5];
+
+        public static Texture2D bg;
+        public static Texture2D playerTex;
+
+        //Player player;
 
         #endregion
 
@@ -46,14 +56,16 @@ namespace ADGTerri
 
         protected override void Initialize()
         {
-            //initialize keyboard state
-            curKeyboardState = new KeyboardState();
+            exitGame = false;
+            IsMouseVisible = true;
+            Window.Title = "Thanksgiving Run";
 
-            //initialize player
-            player = new Player();
+            //initialize level1
+            //level[0] = new Level(new Vector2(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 300), Content.Load<Texture2D>("bg"), 
+              // Content.Load<Texture2D>("sprite") );
 
             //initialize camera
-            m_camera = new Camera(GraphicsDevice.Viewport);
+            //m_camera = new Camera(GraphicsDevice.Viewport);
 
             base.Initialize();
         }
@@ -62,13 +74,16 @@ namespace ADGTerri
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatchHUD = new SpriteBatch(GraphicsDevice);
+
+            fontLarge = Content.Load<SpriteFont>(@"Fonts\FontLarge");
+            fontSmall = Content.Load<SpriteFont>(@"Fonts\FontSmall");
+            SprSinglePixel = Content.Load<Texture2D>(@"Textures\SinglePixel");
+            bg = Content.Load<Texture2D>(@"Textures\bg");
+            playerTex = Content.Load<Texture2D>(@"Textures\sprite");
+
+            MenuManager.CreateMenuItems();
             
-            //Load the player
-            player.LoadContent(this.Content);
-            
-            //Load background
-            //TODO: extract background into a level class - med priority
-            bg = Content.Load<Texture2D>("bg");
 
         }
 
@@ -80,17 +95,14 @@ namespace ADGTerri
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
+                || Keyboard.GetState().IsKeyDown(Keys.Escape)
+                    || exitGame)
                 this.Exit();
 
-            curKeyboardState = Keyboard.GetState();
+            InputHelper.UpdateStates();
+            GameManager.Update(gameTime);   
 
-            if (curKeyboardState.IsKeyDown(Keys.Escape))
-                this.Exit();
-
-            player.Update(gameTime, GraphicsDevice, curKeyboardState);    
-
-            m_camera.Update(gameTime, player);
             base.Update(gameTime);
         }
 
@@ -98,17 +110,19 @@ namespace ADGTerri
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, m_camera.transform);
-            
-            //Draw Background
-            spriteBatch.Draw(bg, new Vector2(0, -1400), Color.White);
-            
-            //Draw Player
-            player.Draw(spriteBatch);
-
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            spriteBatchHUD.Begin();
+            //spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, m_camera.transform);
+            GameManager.Draw(spriteBatch, spriteBatchHUD);
             spriteBatch.End();
+            spriteBatchHUD.End();
 
             base.Draw(gameTime);
+        }
+
+        public static void ExitGame()
+        {
+            exitGame = true;
         }
     }
 }

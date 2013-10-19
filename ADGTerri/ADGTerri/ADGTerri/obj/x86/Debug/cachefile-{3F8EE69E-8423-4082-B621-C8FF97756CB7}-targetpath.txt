@@ -1,2 +1,5 @@
-Content\bg.xnb
-Content\sprite.xnb
+Content\Textures\bg.xnb
+Content\Textures\sprite.xnb
+Content\Textures\SinglePixel.xnb
+Content\Fonts\FontLarge.xnb
+Content\Fonts\FontSmall.xnb
