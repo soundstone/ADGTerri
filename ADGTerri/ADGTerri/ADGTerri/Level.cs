@@ -37,12 +37,15 @@ namespace ADGTerri
         public List<Actor> Actors;
         public Player player;
         Texture2D backgroundTexture;
+        List<Platform> platforms;
         
         public Level(Texture2D bgTex)
         {
             backgrounds = new List<BackgroundItem>();
+            platforms = new List<Platform>();
             Actors = new List<Actor>();
             this.backgroundTexture = bgTex;
+            
         }
         
         public void Update(GameTime gameTime)
@@ -54,7 +57,15 @@ namespace ADGTerri
             {
                 Actors[i].Update(gameTime);
             }
-            
+
+            foreach (Platform platform in platforms)
+            {
+                //check collision and move if needed.
+                // if(
+
+                if (platform.MOVE)
+                    platform.MovePlatform();
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, SpriteBatch spriteBatchHUD)
@@ -81,6 +92,11 @@ namespace ADGTerri
             float speed, float layerDepth)
         {
             backgrounds.Add(new BackgroundItem(texture, position, speed, layerDepth));
+        }
+
+        public void AddPlatform(Texture2D tex, Vector2 pos, Rectangle rect, bool move)
+        {
+            platforms.Add(new Platform(tex, pos, rect, move));
         }
 
         #endregion

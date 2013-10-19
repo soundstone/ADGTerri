@@ -38,7 +38,7 @@ namespace ADGTerri
         public static Texture2D bg;
         public static Texture2D playerTex;
 
-        Player player;
+        public Player player;
         Vector2 playerStartPosition;
         Texture2D playerTexture;
 
