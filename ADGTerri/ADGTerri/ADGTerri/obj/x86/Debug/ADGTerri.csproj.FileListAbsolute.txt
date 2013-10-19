@@ -5,3 +5,11 @@ c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGT
 c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.pdb
 c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\bg.xnb
 c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\sprite.xnb
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\bg.xnb
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\sprite.xnb
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\ADGTerri.exe
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\ADGTerri.pdb
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.csprojResolveAssemblyReference.cache
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.exe
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.pdb

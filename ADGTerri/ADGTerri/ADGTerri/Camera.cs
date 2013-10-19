@@ -19,9 +19,9 @@ namespace ADGTerri
             view = _view;
         }
 
-        public void Update(GameTime gameTime, Game1 sprite)
+        public void Update(GameTime gameTime, Player player)
         {
-            center = new Vector2(0, sprite.spritePos.Y + (sprite.spriteRect.Height / 2) - 250);
+            center = new Vector2(0, player.PlayerPos.Y + (player.Height / 2) - 250);
 
             if (center.Y > Game1.SCREEN_HEIGHT -600)
                 center.Y = Game1.SCREEN_HEIGHT -600;

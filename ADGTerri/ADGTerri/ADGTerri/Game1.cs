@@ -16,6 +16,8 @@ namespace ADGTerri
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        #region Variables and Properties
+
         public const int SCREEN_HEIGHT = 600;
         public const int SCREEN_WIDTH = 800;
 
@@ -28,9 +30,10 @@ namespace ADGTerri
 
         Texture2D bg;
 
-        Texture2D sprite;
-        public Rectangle spriteRect;
-        public Vector2 spritePos;
+        Player player;
+
+        #endregion
+
 
         public Game1()
         {
@@ -43,8 +46,13 @@ namespace ADGTerri
 
         protected override void Initialize()
         {
+            //initialize keyboard state
             curKeyboardState = new KeyboardState();
 
+            //initialize player
+            player = new Player();
+
+            //initialize camera
             m_camera = new Camera(GraphicsDevice.Viewport);
 
             base.Initialize();
@@ -54,18 +62,19 @@ namespace ADGTerri
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            sprite = Content.Load<Texture2D>("sprite");
-            spritePos = new Vector2(400, 300);
-
+            
+            //Load the player
+            player.LoadContent(this.Content);
+            
+            //Load background
+            //TODO: extract background into a level class - med priority
             bg = Content.Load<Texture2D>("bg");
 
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            
         }
 
         protected override void Update(GameTime gameTime)
@@ -79,33 +88,9 @@ namespace ADGTerri
             if (curKeyboardState.IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            spriteRect = new Rectangle((int)spritePos.X, (int)spritePos.Y, sprite.Width, sprite.Height);
+            player.Update(gameTime, GraphicsDevice, curKeyboardState);    
 
-
-
-            //"Gravity"
-            spritePos.Y += 5;
-
-            if (curKeyboardState.IsKeyDown(Keys.W))
-                spritePos.Y -= 10;
-            //if (curKeyboardState.IsKeyDown(Keys.Down))
-            //    spritePos.Y += 5;
-            if (curKeyboardState.IsKeyDown(Keys.D))
-                spritePos.X += 5;
-            if (curKeyboardState.IsKeyDown(Keys.A))
-                spritePos.X -= 5;
-
-            //Boundery collision
-            if (spritePos.X < 0)
-                spritePos.X = 0;
-            if (spritePos.Y < -1325)
-                spritePos.Y = -1325;
-            if (spritePos.X + spriteRect.Width > SCREEN_WIDTH)
-                spritePos.X = SCREEN_WIDTH - spriteRect.Width;
-            if (spritePos.Y + spriteRect.Height > SCREEN_HEIGHT)
-                spritePos.Y = SCREEN_HEIGHT - spriteRect.Height;
-
-            m_camera.Update(gameTime, this);
+            m_camera.Update(gameTime, player);
             base.Update(gameTime);
         }
 
@@ -114,8 +99,13 @@ namespace ADGTerri
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, m_camera.transform);
+            
+            //Draw Background
             spriteBatch.Draw(bg, new Vector2(0, -1400), Color.White);
-            spriteBatch.Draw(sprite, spritePos, Color.White);
+            
+            //Draw Player
+            player.Draw(spriteBatch);
+
             spriteBatch.End();
 
             base.Draw(gameTime);

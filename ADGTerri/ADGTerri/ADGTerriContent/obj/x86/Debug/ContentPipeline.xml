@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\bg.xnb</Output>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\bg.xnb</Output>
       <Time>2013-10-18T19:36:51.1793792-04:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\sprite.xnb</Output>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\sprite.xnb</Output>
       <Time>2013-10-18T19:36:51.1823793-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -25,10 +25,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerriContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\soundstone\documents\visual studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
