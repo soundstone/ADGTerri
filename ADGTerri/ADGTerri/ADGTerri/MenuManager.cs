@@ -111,7 +111,7 @@ namespace ADGTerri
             switch (MenuState)
             {
                 case MenuState.TitleScreen:
-                    spriteBatchHUD.DrawString(Game1.fontLarge, "Title Screen", new Vector2(187, 100), Color.White);
+                    spriteBatchHUD.DrawString(Game1.fontLarge, "Thanksgiving Run", new Vector2(187, 100), Color.White);
                     spriteBatchHUD.DrawString(Game1.fontLarge, "Press Start", new Vector2(200, 400), Color.White);
                     break;
 
