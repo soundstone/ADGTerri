@@ -29,30 +29,40 @@ namespace ADGTerri
         Texture2D playerTexture;
         public Rectangle playerRect;
         public Vector2 playerPos;
+        public float startY;
         float speed;
         float layerDepth;
+        public bool jumping;
+        float jumpSpeed = 0;
+        public static GraphicsDeviceManager gDevice;
 
         #region Physics Variables
 
         //initial gravity velocity
-        Vector2 GRAVITY = new Vector2(0f, 9.80f);
-        Vector2 velocity;
+        //Vector2 GRAVITY = new Vector2(0f, 9.80f);
+        private Vector2 velocity;
+        const float gravity = 100f;
+        float moveSpeed = 500f;
+        //float jumpSpeed = 2000f;
 
         #endregion
 
 
         //movement
-        Vector2 jumpingPosition;
-        float landingHeight; //need to know where landing of jump is
+        //Vector2 jumpingPosition;
+        //float landingHeight; //need to know where landing of jump is
         #endregion
 
         #region Ctor
 
-        public Player(Vector2 position)
+        public Player(Vector2 position, GraphicsDeviceManager graphics)
             :base(position)
         {
             this.playerTexture = Game1.playerTex;
             this.playerPos = position;
+            velocity = new Vector2(0, 0);
+            gDevice = graphics;
+            this.startY = playerPos.Y;
         }
 
         #endregion
@@ -76,24 +86,31 @@ namespace ADGTerri
 
         public override void Update(GameTime gameTime)
         {
-            
-            //move in desired direction
-            if (InputHelper.NGS.ThumbSticks.Left.X > 0.3
-                || InputHelper.WasKeyPressed(Keys.D))
-                this.playerPos.X += 5;
-            if (InputHelper.NGS.ThumbSticks.Left.X < -0.3
-                || InputHelper.WasKeyPressed(Keys.A))
-                this.playerPos.X -= 5;
-            if (InputHelper.WasButtonPressed(Buttons.A) 
-                || InputHelper.WasKeyPressed(Keys.W))
-                this.playerPos.Y += velocity.Y;
-            if (InputHelper.IsKeyHeld(Keys.A))
-                this.playerPos.X -= 5;
-            if (InputHelper.IsKeyHeld(Keys.D))
-                this.playerPos.X += 5;
-            if (InputHelper.IsKeyHeld(Keys.W))
-                this.playerPos.Y -= 10;
 
+            playerPos += velocity;
+
+            if (InputHelper.IsKeyHeld(Keys.A))
+                velocity.X = -moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            else if (InputHelper.IsKeyHeld(Keys.D))
+                velocity.X = moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            else
+                    velocity.X = 0;
+            if(jumping)
+            {
+                playerPos.Y += jumpSpeed;
+                jumpSpeed += 1;
+                    if(playerPos.Y >= startY)
+                    {
+                        playerPos.Y = startY;
+                        jumping = false;
+                    }
+            }
+            else if( (InputHelper.WasKeyPressed(Keys.W)))
+            {
+                jumping = true;
+                jumpSpeed = -20;
+            }
+  
             //Players collision
             #region Collision
 
@@ -113,7 +130,7 @@ namespace ADGTerri
             ////gravity on player 
             //#region Gravity
             ////TODO: apply physics here - high priority
-            playerPos.Y += 5;
+           // playerPos.Y += 5;
             ////delta time 1.0f / 1 second
             //float dT = (float)gameTime.ElapsedGameTime.Milliseconds * 0.001f;
             //velocity += GRAVITY * dT;
@@ -123,21 +140,21 @@ namespace ADGTerri
 
             //Movement
 
-            KeyboardState keystate = Keyboard.GetState();
-            switch (state)
-            {
-                case PlayerState.Idle:
-                case PlayerState.Walking:
-                    if (keystate.IsKeyDown(Keys.A))
-                    {
-                        landingHeight = playerPos.Y;
-                        jumpingPosition = playerPos;
+            //KeyboardState keystate = Keyboard.GetState();
+            //switch (state)
+            //{
+            //    case PlayerState.Idle:
+            //    case PlayerState.Walking:
+            //        if (keystate.IsKeyDown(Keys.A))
+            //        {
+            //            landingHeight = playerPos.Y;
+            //            jumpingPosition = playerPos;
                         
-                    }
-                    break;
-                case PlayerState.Jumping:
-                    break;
-            }
+            //        }
+            //        break;
+            //    case PlayerState.Jumping:
+            //        break;
+            //}
 
             base.Update(gameTime);
         }

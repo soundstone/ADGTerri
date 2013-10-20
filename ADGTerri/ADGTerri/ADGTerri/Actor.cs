@@ -9,9 +9,33 @@ namespace ADGTerri
 {
     public class Actor
     {
-        public Vector2 position;
+        protected Vector2 position;
+       // protected Vector2 velocity;
+        protected bool enabled;
+        protected bool onGround;
+        protected bool flipped = false;
         float layerDepth;
         Rectangle drawArea;
+
+        //for animations
+        //protected int frameWidth;
+        //protected int frameHeight;
+        //protected Rectangle collisionRectangle;
+        //protected int collideWidth;
+        //protected int collideHeight;
+
+
+        public bool Enabled
+        {
+            get { return enabled; }
+            set { enabled = value; }
+        }
+
+        public Vector2 Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
 
         public Actor(Vector2 position)
         {

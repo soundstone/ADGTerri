@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\bg.xnb</Output>
-      <Time>2013-10-19T17:38:53.7918249-04:00</Time>
+      <Time>2013-10-19T20:23:24.3423881-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\sprite.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\sprite.xnb</Output>
-      <Time>2013-10-19T17:38:53.7938251-04:00</Time>
+      <Time>2013-10-19T20:23:24.3443883-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\SinglePixel.jpg</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\SinglePixel.xnb</Output>
-      <Time>2013-10-19T17:38:53.7908249-04:00</Time>
+      <Time>2013-10-19T20:23:24.340388-04:00</Time>
     </Item>
     <Item>
       <Source>Fonts\FontLarge.spritefont</Source>
@@ -35,7 +35,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontLarge.xnb</Output>
-      <Time>2013-10-19T17:38:53.7838245-04:00</Time>
+      <Time>2013-10-19T20:23:24.3343877-04:00</Time>
     </Item>
     <Item>
       <Source>Fonts\FontSmall.spritefont</Source>
@@ -44,7 +44,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontSmall.xnb</Output>
-      <Time>2013-10-19T17:38:53.7868247-04:00</Time>
+      <Time>2013-10-19T20:23:24.3363878-04:00</Time>
     </Item>
     <Item>
       <Source>Fonts\TitleFont.spritefont</Source>
@@ -53,7 +53,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\TitleFont.xnb</Output>
-      <Time>2013-10-19T17:38:53.7888248-04:00</Time>
+      <Time>2013-10-19T20:23:24.3383879-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\platformLarge.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformLarge.xnb</Output>
-      <Time>2013-10-19T17:40:50.4975001-04:00</Time>
+      <Time>2013-10-19T20:23:27.9285933-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\platformMedium.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformMedium.xnb</Output>
-      <Time>2013-10-19T17:40:50.5005003-04:00</Time>
+      <Time>2013-10-19T20:23:27.9385938-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\platformSmall.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformSmall.xnb</Output>
-      <Time>2013-10-19T17:40:50.5035005-04:00</Time>
+      <Time>2013-10-19T20:23:27.9395939-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

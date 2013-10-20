@@ -57,5 +57,10 @@ namespace ADGTerri
         {
             return NKS.IsKeyDown(key);
         }
+
+        public static bool IsKeyUp(Keys key)
+        {
+            return NKS.IsKeyUp(key);
+        }
     }
 }

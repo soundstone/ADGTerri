@@ -21,6 +21,7 @@ namespace ADGTerri
         private static Player gplayer;
         private static Vector2 respawnLocation;
         private static ContentManager Content;
+        private static GraphicsDeviceManager graphics;
 
         public static int CurrentLevel
         {
@@ -33,10 +34,11 @@ namespace ADGTerri
             set { respawnLocation = value; }
         }
 
-        public static void Initialize(ContentManager content, Player gamePlayer)
+        public static void Initialize(ContentManager content, Player gamePlayer, GraphicsDeviceManager graph)
         {
             Content = content;
             gplayer = gamePlayer;
+            graphics = graph;
         }
 
         public static void Update(GameTime gameTime)
@@ -72,8 +74,14 @@ namespace ADGTerri
                                     gplayer.playerPos.Y + gplayer.Height <= platform.Position.Y + platform.Texture.Height)
                                 {
                                     gplayer.playerPos.Y = platform.Position.Y - gplayer.Height;
+                                    gplayer.startY = gplayer.playerPos.Y;
+                                }
+                                else
+                                {
+                                    gplayer.startY = 550;
                                 }
                             }
+                            
                         }
                             break;
                     }
@@ -106,7 +114,7 @@ namespace ADGTerri
             Level level = new Level(Game1.bg, gplayer);
 
             Levels.Add(level);
-            level.Actors.Add(new Player(new Vector2(400, 300)));
+            level.Actors.Add(new Player(new Vector2(0, 550), graphics));
 
             level.player = level.Actors[level.Actors.Count - 1] as Player;
 

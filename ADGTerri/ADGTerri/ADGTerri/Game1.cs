@@ -42,7 +42,7 @@ namespace ADGTerri
         public static Texture2D playerTex;
 
         public Player player;
-        Vector2 playerStartPosition;
+        Vector2 playerStartPosition = new Vector2(0,550);
 
         #endregion
 
@@ -84,9 +84,9 @@ namespace ADGTerri
             ///<summary> 
             /// Player and GameManager initialized in LoadContent due to order of start up. Must be here!
             /// </summary> 
-            player = new Player(playerStartPosition);
+            player = new Player(playerStartPosition, graphics);
             //initialize the GameManager
-            GameManager.Initialize(Content, player);
+            GameManager.Initialize(Content, player, graphics);
 
             platformLargeTex = Content.Load<Texture2D>(@"Textures\platformLarge");
             platformMedTex = Content.Load<Texture2D>(@"Textures\platformMedium");
