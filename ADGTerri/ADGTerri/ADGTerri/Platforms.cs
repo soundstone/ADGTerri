@@ -37,9 +37,28 @@ namespace ADGTerri
         /// </summary>
         float speed;
 
+        public Texture2D Texture
+        {
+            get { return platformTexture; }
+        }
+
         public bool MOVE
         {
             get { return movePlatform; }
+        }
+
+        public Vector2 Position
+        {
+            get { return platformPosition; }
+        }
+
+        public Platform(Texture2D tex, Vector2 pos, bool move, float spd)
+        {
+            this.platformTexture = tex;
+            this.platformPosition = pos;
+            this.platformRect = new Rectangle(0, 0, platformTexture.Width, platformTexture.Height);
+            this.movePlatform = move;
+            this.speed = 0;
         }
 
         public Platform(Texture2D tex, Vector2 pos, Rectangle rect, bool move)
@@ -58,6 +77,11 @@ namespace ADGTerri
             this.platformRect = rect;
             this.movePlatform = move;
             this.speed = spd;
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(platformTexture, platformPosition, Color.White);
         }
 
         public void MovePlatform()

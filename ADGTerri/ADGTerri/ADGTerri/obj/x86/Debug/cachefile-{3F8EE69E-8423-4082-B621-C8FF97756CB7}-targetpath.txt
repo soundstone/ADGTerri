@@ -4,3 +4,6 @@ Content\Textures\SinglePixel.xnb
 Content\Fonts\FontLarge.xnb
 Content\Fonts\FontSmall.xnb
 Content\Fonts\TitleFont.xnb
+Content\Textures\platformLarge.xnb
+Content\Textures\platformMedium.xnb
+Content\Textures\platformSmall.xnb

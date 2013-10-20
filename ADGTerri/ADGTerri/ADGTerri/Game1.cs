@@ -30,6 +30,9 @@ namespace ADGTerri
         public static SpriteFont titleFont;
 
         public static Texture2D SprSinglePixel;
+        public static Texture2D platformSmallTex;
+        public static Texture2D platformMedTex;
+        public static Texture2D platformLargeTex;
 
         Camera m_camera;
 
@@ -40,7 +43,6 @@ namespace ADGTerri
 
         public Player player;
         Vector2 playerStartPosition;
-        Texture2D playerTexture;
 
         #endregion
 
@@ -78,7 +80,17 @@ namespace ADGTerri
             SprSinglePixel = Content.Load<Texture2D>(@"Textures\SinglePixel");
             bg = Content.Load<Texture2D>(@"Textures\bg");
             playerTex = Content.Load<Texture2D>(@"Textures\sprite");
+
+            ///<summary> 
+            /// Player and GameManager initialized in LoadContent due to order of start up. Must be here!
+            /// </summary> 
             player = new Player(playerStartPosition);
+            //initialize the GameManager
+            GameManager.Initialize(Content, player);
+
+            platformLargeTex = Content.Load<Texture2D>(@"Textures\platformLarge");
+            platformMedTex = Content.Load<Texture2D>(@"Textures\platformMedium");
+            platformSmallTex = Content.Load<Texture2D>(@"Textures\platformSmall");
 
             MenuManager.CreateMenuItems();
             
@@ -87,7 +99,6 @@ namespace ADGTerri
 
         protected override void UnloadContent()
         {
-            
         }
 
         protected override void Update(GameTime gameTime)
@@ -115,10 +126,13 @@ namespace ADGTerri
             spriteBatchHUD.Begin();
             
             GameManager.Draw(spriteBatch, spriteBatchHUD);
-            
-            if(GameManager.gameState == GameState.Playing)
+
+            if (GameManager.gameState == GameState.Playing)
+            {
                 player.Draw(spriteBatch);
-            
+                spriteBatch.DrawString(fontSmall, "Player pos: (" + player.playerPos.X + ", " + player.playerPos.Y + ")",
+                    new Vector2(SCREEN_WIDTH - 300, player.playerPos.Y), Color.Yellow);
+            }
             spriteBatch.End();
             spriteBatchHUD.End();
 

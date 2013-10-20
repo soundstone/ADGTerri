@@ -17,3 +17,6 @@ C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontLarge.xnb
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontSmall.xnb
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\TitleFont.xnb
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformLarge.xnb
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformMedium.xnb
+C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformSmall.xnb

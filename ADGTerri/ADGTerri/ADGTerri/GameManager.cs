@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 namespace ADGTerri
 {
     enum GameState
@@ -16,7 +17,27 @@ namespace ADGTerri
     {
         public static GameState gameState = GameState.MainMenu;
         public static List<Level> Levels = new List<Level>();
-        public static int CurrentLevel = 0;
+        private static int currentLevel = 0;
+        private static Player gplayer;
+        private static Vector2 respawnLocation;
+        private static ContentManager Content;
+
+        public static int CurrentLevel
+        {
+            get { return currentLevel; }
+        }
+
+        public static Vector2 RespawnLocation
+        {
+            get { return respawnLocation; }
+            set { respawnLocation = value; }
+        }
+
+        public static void Initialize(ContentManager content, Player gamePlayer)
+        {
+            Content = content;
+            gplayer = gamePlayer;
+        }
 
         public static void Update(GameTime gameTime)
         {
@@ -37,9 +58,25 @@ namespace ADGTerri
                     break;
 
                 case GameState.Playing:
-                    //update level
-                    Levels[CurrentLevel].Update(gameTime);
-                    break;
+                    {
+                        //update level
+                        Levels[currentLevel].Update(gameTime);
+
+                        foreach (Platform platform in Levels[currentLevel].Platforms)
+                        {
+                            //check collision and move if needed.
+                            if (gplayer.playerPos.X + 30 >= platform.Position.X &&
+                                gplayer.playerPos.X + 30 <= platform.Position.X + platform.Texture.Width)
+                            {
+                                if (gplayer.playerPos.Y + gplayer.Height >= platform.Position.Y &&
+                                    gplayer.playerPos.Y + gplayer.Height <= platform.Position.Y + platform.Texture.Height)
+                                {
+                                    gplayer.playerPos.Y = platform.Position.Y - gplayer.Height;
+                                }
+                            }
+                        }
+                            break;
+                    }
             }
         }
 
@@ -59,19 +96,27 @@ namespace ADGTerri
 
                 case GameState.Playing:
                     CreateLevel();
-                    Levels[CurrentLevel].Draw(spriteBatch, spriteBatchHUD);
+                    Levels[currentLevel].Draw(spriteBatch, spriteBatchHUD);
                     break;
             }
         }
 
         public static void CreateLevel()
         {
-            Level level = new Level(Game1.bg);
+            Level level = new Level(Game1.bg, gplayer);
 
             Levels.Add(level);
             level.Actors.Add(new Player(new Vector2(400, 300)));
 
             level.player = level.Actors[level.Actors.Count - 1] as Player;
+
+            level.AddPlatform(Game1.platformSmallTex, new Vector2(50, Game1.SCREEN_HEIGHT - 120),
+                false, 0f);
+            level.AddPlatform(Game1.platformMedTex, new Vector2(200, Game1.SCREEN_HEIGHT - 200),
+                false, 0f);
+            level.AddPlatform(Game1.platformLargeTex, new Vector2(400, Game1.SCREEN_HEIGHT - 300),
+                false, 0f);
+                
         }
     }
 }

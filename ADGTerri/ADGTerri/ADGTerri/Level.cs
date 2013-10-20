@@ -38,14 +38,19 @@ namespace ADGTerri
         public Player player;
         Texture2D backgroundTexture;
         List<Platform> platforms;
-        
-        public Level(Texture2D bgTex)
+
+
+        public List<Platform> Platforms
+        {
+            get { return platforms; }
+        }
+        public Level(Texture2D bgTex, Player p)
         {
             backgrounds = new List<BackgroundItem>();
             platforms = new List<Platform>();
             Actors = new List<Actor>();
             this.backgroundTexture = bgTex;
-            
+            player = p;            
         }
         
         public void Update(GameTime gameTime)
@@ -61,7 +66,15 @@ namespace ADGTerri
             foreach (Platform platform in platforms)
             {
                 //check collision and move if needed.
-                // if(
+                //if (player.playerPos.X + 30 >= platform.Position.X &&
+                //    player.playerPos.X + 30 <= platform.Position.X + platform.Texture.Width)
+                //{
+                //    if (player.playerPos.Y + player.Height >= platform.Position.Y &&
+                //        player.playerPos.Y + player.Height <= platform.Position.Y + platform.Texture.Height)
+                //    {
+                //        player.playerPos.Y = platform.Position.Y - player.Height;
+                //    }
+                //}
 
                 if (platform.MOVE)
                     platform.MovePlatform();
@@ -79,6 +92,12 @@ namespace ADGTerri
                 backgrounds[i].Draw(spriteBatch);
             }
 
+            //draw platforms
+            foreach (Platform platform in platforms)
+            {
+                platform.Draw(spriteBatch);
+            }
+
             //draw actors
             for (int i = 0; i < Actors.Count; i++)
             {
@@ -94,9 +113,9 @@ namespace ADGTerri
             backgrounds.Add(new BackgroundItem(texture, position, speed, layerDepth));
         }
 
-        public void AddPlatform(Texture2D tex, Vector2 pos, Rectangle rect, bool move)
+        public void AddPlatform(Texture2D tex, Vector2 pos, bool move, float spd)
         {
-            platforms.Add(new Platform(tex, pos, rect, move));
+            platforms.Add(new Platform(tex, pos, move, spd));
         }
 
         #endregion
