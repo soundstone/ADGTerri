@@ -39,6 +39,10 @@ namespace ADGTerri
         float rollSpeed = 25.0f;
         double rollTime, rollTimer = 0;
 
+        bool bash = false;
+        float bashSpeed = 0.2f;
+        double bashTime, bashTimer = 0;
+
         #region Physics Variables
 
         //initial gravity velocity
@@ -115,6 +119,11 @@ namespace ADGTerri
                 jumping = true;
                 jumpSpeed = -20;
             }
+
+            if (!jumping)
+            {
+                playerPos.Y += 9.8f;
+            }
             #endregion
             #region Peck and Roll
             if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
@@ -137,6 +146,22 @@ namespace ADGTerri
                 rollTime = 0;
                 rollTimer = 0;
             }
+
+            if (InputHelper.WasKeyPressed(Keys.Space) && bash == false)
+            {
+                 bash = true;
+                bashTime = gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
+            }
+
+            bashTimer += bashTime;
+
+            if (bashTimer >= 0.3f)
+            {
+                bash = false;
+                bashTimer = 0;
+                bashTime = 0;
+            }
+
             #endregion
             #endregion
             //Players collision w/ level bounds
@@ -185,6 +210,9 @@ namespace ADGTerri
             spriteBatch.Draw(playerTexture, playerPos, Color.White);
             if (rolling)
                 spriteBatch.DrawString(Game1.fontSmall, "Rolling!", new Vector2(20, 40), Color.Blue);
+
+            if (bash)
+                spriteBatch.DrawString(Game1.fontSmall, "Peck!", new Vector2(20, 15), Color.Black);
             base.Draw(spriteBatch);
         }
 
