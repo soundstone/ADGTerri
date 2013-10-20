@@ -82,6 +82,15 @@
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformSmall.xnb</Output>
       <Time>2013-10-19T20:23:27.9395939-04:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\RedTeam.png</Source>
+      <Name>Textures\RedTeam</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\RedTeam.xnb</Output>
+      <Time>2013-10-20T02:11:42.9357193-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
