@@ -54,7 +54,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Music\" />
     <Folder Include="Sounds\" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +104,20 @@
       <Name>RedTeam</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\ObstacleSm.png">
+      <Name>ObstacleSm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Music\Kalimba.mp3">
+      <Name>Kalimba</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

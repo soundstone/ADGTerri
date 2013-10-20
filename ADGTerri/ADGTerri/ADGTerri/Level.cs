@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace ADGTerri
 {
@@ -38,19 +40,22 @@ namespace ADGTerri
         public Player player;
         Texture2D backgroundTexture;
         List<Platform> platforms;
+        Song levelSong;
+        int checkIntro = 0;
 
 
         public List<Platform> Platforms
         {
             get { return platforms; }
         }
-        public Level(Texture2D bgTex, Player p)
+        public Level(Texture2D bgTex, Player p, Song song)
         {
             backgrounds = new List<BackgroundItem>();
             platforms = new List<Platform>();
             Actors = new List<Actor>();
             this.backgroundTexture = bgTex;
-            player = p;            
+            player = p;
+            levelSong = song;   
         }
         
         public void Update(GameTime gameTime)
@@ -83,6 +88,8 @@ namespace ADGTerri
 
         public void Draw(SpriteBatch spriteBatch, SpriteBatch spriteBatchHUD)
         {
+            PlayIntro();
+
             //draw Back-background
             spriteBatch.Draw(backgroundTexture, new Vector2(0, Game1.SCREEN_HEIGHT - backgroundTexture.Height), Color.White);
 
@@ -118,6 +125,15 @@ namespace ADGTerri
             platforms.Add(new Platform(tex, pos, move, spd));
         }
 
+        private void PlayIntro()
+        {
+            if (checkIntro >= 1)
+            {
+            }
+            else 
+                MediaPlayer.Play(levelSong);
+            checkIntro = 1;
+        }
         #endregion
 
     }

@@ -91,6 +91,25 @@
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\RedTeam.xnb</Output>
       <Time>2013-10-20T02:11:42.9357193-04:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\ObstacleSm.png</Source>
+      <Name>Textures\ObstacleSm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\ObstacleSm.xnb</Output>
+      <Time>2013-10-20T03:19:07.9550812-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Kalimba.mp3</Source>
+      <Name>Music\Kalimba</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.xnb</Output>
+      <Extra>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.wma</Extra>
+      <Time>2013-10-20T03:19:21.8088736-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

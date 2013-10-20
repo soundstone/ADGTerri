@@ -35,6 +35,9 @@ namespace ADGTerri
         public bool jumping;
         float jumpSpeed = 0;
         public static GraphicsDeviceManager gDevice;
+        bool rolling = false;
+        float rollSpeed = 25.0f;
+        double rollTime, rollTimer = 0;
 
         #region Physics Variables
 
@@ -88,6 +91,8 @@ namespace ADGTerri
         {
 
             playerPos += velocity;
+            #region Input
+            #region Moving left / right and Jump
 
             if (InputHelper.IsKeyHeld(Keys.A))
                 velocity.X = -moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -110,8 +115,31 @@ namespace ADGTerri
                 jumping = true;
                 jumpSpeed = -20;
             }
-  
-            //Players collision
+            #endregion
+            #region Peck and Roll
+            if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
+            {
+                rolling = true;
+                rollTime = gameTime.ElapsedGameTime.TotalSeconds * 100;
+
+                if (velocity.X > 0)
+                    velocity.X += rollSpeed;
+                else if (velocity.X < 0)
+                    velocity.X -= rollSpeed;
+                else
+                    velocity.X = 0;
+            }
+            rollTimer += rollTime;
+
+            if (rollTimer >= 4)
+            {
+                rolling = false;
+                rollTime = 0;
+                rollTimer = 0;
+            }
+            #endregion
+            #endregion
+            //Players collision w/ level bounds
             #region Collision
 
             //player collision box
@@ -127,14 +155,7 @@ namespace ADGTerri
                 playerPos.Y = SCREEN_HEIGHT - Height;
             #endregion
 
-            ////gravity on player 
-            //#region Gravity
-            ////TODO: apply physics here - high priority
-           // playerPos.Y += 5;
-            ////delta time 1.0f / 1 second
-            //float dT = (float)gameTime.ElapsedGameTime.Milliseconds * 0.001f;
-            //velocity += GRAVITY * dT;
-            //playerPos += velocity * dT;
+            
             
             //#endregion 
 
@@ -162,6 +183,8 @@ namespace ADGTerri
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(playerTexture, playerPos, Color.White);
+            if (rolling)
+                spriteBatch.DrawString(Game1.fontSmall, "Rolling!", new Vector2(20, 40), Color.Blue);
             base.Draw(spriteBatch);
         }
 

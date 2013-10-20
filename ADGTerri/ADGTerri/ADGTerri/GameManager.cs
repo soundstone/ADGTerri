@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
+
 namespace ADGTerri
 {
     enum GameState
@@ -16,13 +18,14 @@ namespace ADGTerri
 
     static class GameManager
     {
-        public static GameState gameState = GameState.Intro;
+        public static GameState gameState = GameState.MainMenu;
         public static List<Level> Levels = new List<Level>();
         private static int currentLevel = 0;
         private static Player gplayer;
         private static Vector2 respawnLocation;
         private static ContentManager Content;
         private static GraphicsDeviceManager graphics;
+        
 
         //logo Display variables
         private static Texture2D logoTexture;
@@ -33,6 +36,9 @@ namespace ADGTerri
         private static int delayer = 1;
         private static int checkIntro = 0;
         private static double frameTime;
+
+        //level audio
+        static Song levelSong;
 
         public static int CurrentLevel
         {
@@ -52,6 +58,7 @@ namespace ADGTerri
             graphics = graph;
             logoTexture = Content.Load<Texture2D>(@"Textures\RedTeam");
             logoCenter = new Vector2(logoTexture.Width / 2, logoTexture.Height / 2);
+            levelSong = Content.Load<Song>(@"Music\Kalimba");
         }
 
         public static void Update(GameTime gameTime)
@@ -164,7 +171,7 @@ namespace ADGTerri
 
         public static void CreateLevel()
         {
-            Level level = new Level(Game1.bg, gplayer);
+            Level level = new Level(Game1.bg, gplayer, levelSong);
 
             Levels.Add(level);
             level.Actors.Add(new Player(new Vector2(0, 550), graphics));
