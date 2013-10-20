@@ -39,6 +39,8 @@ namespace ADGTerri
         float rollSpeed = 25.0f;
         double rollTime, rollTimer = 0;
 
+        bool bash = false;
+
         #region Physics Variables
 
         //initial gravity velocity
@@ -100,21 +102,32 @@ namespace ADGTerri
                 velocity.X = moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             else
                     velocity.X = 0;
-            if(jumping)
+            
+            if (jumping)
             {
                 playerPos.Y += jumpSpeed;
                 jumpSpeed += 1;
-                    if(playerPos.Y >= startY)
-                    {
-                        playerPos.Y = startY;
-                        jumping = false;
-                    }
+                if (playerPos.Y >= startY)
+                {
+                    playerPos.Y = startY;
+                    jumping = false;
+                }
             }
-            else if( (InputHelper.WasKeyPressed(Keys.W)))
+            else if ((InputHelper.WasKeyPressed(Keys.W)))
             {
                 jumping = true;
                 jumpSpeed = -20;
             }
+
+            //resolves sprite not falling when moving off platform edge.
+            //feel free to adjust the "gravity" as you feel necessary
+            //simulates a persistant gravity effect, always pulling when not jumping
+            if (!jumping)
+            {
+                playerPos.Y += 9.8f;
+            }
+
+            
             #endregion
             #region Peck and Roll
             if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
@@ -137,6 +150,14 @@ namespace ADGTerri
                 rollTime = 0;
                 rollTimer = 0;
             }
+
+            //Bash/Peck
+            if (InputHelper.WasKeyPressed(Keys.Space) && bash == false)
+            {
+                bash = true;
+            }
+            else
+                bash = false;
             #endregion
             #endregion
             //Players collision w/ level bounds
@@ -154,8 +175,6 @@ namespace ADGTerri
             if (playerPos.Y + Height > SCREEN_HEIGHT)
                 playerPos.Y = SCREEN_HEIGHT - Height;
             #endregion
-
-            
             
             //#endregion 
 
@@ -185,6 +204,9 @@ namespace ADGTerri
             spriteBatch.Draw(playerTexture, playerPos, Color.White);
             if (rolling)
                 spriteBatch.DrawString(Game1.fontSmall, "Rolling!", new Vector2(20, 40), Color.Blue);
+
+            if (bash)
+                spriteBatch.DrawString(Game1.fontSmall, "Peck!", new Vector2(20, 15), Color.Black);
             base.Draw(spriteBatch);
         }
 

@@ -1,1 +1,2 @@
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\ADGTerriContent.contentprojResolveAssemblyReference.cache
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\ResolveAssemblyReference.cache
