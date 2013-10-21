@@ -7,6 +7,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 
+//for stopwatch function
+using System.Diagnostics;
+using System.Threading;
+
 namespace ADGTerri
 {
     public enum PlayerState
@@ -26,6 +30,8 @@ namespace ADGTerri
 
         public PlayerState state;
 
+        string elapsedTime;
+
         Texture2D playerTexture;
         public Rectangle playerRect;
         public Vector2 playerPos;
@@ -41,7 +47,7 @@ namespace ADGTerri
         float rollSpeed = 25.0f;
         double rollTime, rollTimer = 0;
 
-        bool bash = false;
+        public bool bash = false;
         float bashSpeed = 0.2f;
         double bashTime, bashTimer = 0;
         
@@ -95,7 +101,6 @@ namespace ADGTerri
 
         public override void Update(GameTime gameTime)
         {
-
             playerPos += velocity;
             #region Input
             #region Moving left / right and Jump
@@ -241,6 +246,8 @@ namespace ADGTerri
 
             spriteBatch.DrawString(Game1.fontSmall, "Player pos: \n (" + playerPos.X + "\n, " + playerPos.Y + ")",
                     new Vector2(SCREEN_WIDTH - 150, 30), Color.Yellow);
+
+            //spriteBatch.DrawString(Game1.fontSmall, elapsedTime, new Vector2(SCREEN_WIDTH / 2, 15), Color.Black);
 
             base.Draw(spriteBatch);
         }

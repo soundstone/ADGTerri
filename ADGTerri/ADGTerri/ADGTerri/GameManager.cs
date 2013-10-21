@@ -151,27 +151,30 @@ namespace ADGTerri
 
                         foreach (Obstacle obs in Levels[currentLevel].Obstacles)
                         {
-                            if (!gplayer.rolling)
+                            if (!gplayer.bash)
                             {
-                                //from left side
-                                if (gplayer.playerPos.X + gplayer.Width >= obs.Position.X &&
-                                    gplayer.playerPos.X + gplayer.Width <= obs.Position.X + obs.Texture.Width)
+                                if (!gplayer.rolling)
                                 {
-                                    if (gplayer.playerPos.Y >= obs.Position.Y &&
-                                        gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
+                                    //from left side
+                                    if (gplayer.playerPos.X + gplayer.Width >= obs.Position.X &&
+                                        gplayer.playerPos.X + gplayer.Width <= obs.Position.X + obs.Texture.Width)
                                     {
-                                        gplayer.playerPos.X = obs.Position.X - gplayer.Width;
+                                        if (gplayer.playerPos.Y >= obs.Position.Y &&
+                                            gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
+                                        {
+                                            gplayer.playerPos.X = obs.Position.X - gplayer.Width;
+                                        }
                                     }
-                                }
 
-                                //from right side
-                                if (gplayer.playerPos.X <= obs.Position.X + obs.Texture.Width &&
-                                    gplayer.playerPos.X >= obs.Position.X)
-                                {
-                                    if (gplayer.playerPos.Y >= obs.Position.Y &&
-                                        gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
+                                    //from right side
+                                    if (gplayer.playerPos.X <= obs.Position.X + obs.Texture.Width &&
+                                        gplayer.playerPos.X >= obs.Position.X)
                                     {
-                                        gplayer.playerPos.X = obs.Position.X + obs.Texture.Width;
+                                        if (gplayer.playerPos.Y >= obs.Position.Y &&
+                                            gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
+                                        {
+                                            gplayer.playerPos.X = obs.Position.X + obs.Texture.Width;
+                                        }
                                     }
                                 }
                             }
@@ -262,6 +265,10 @@ namespace ADGTerri
 
             level.AddObstacle(Game1.obstacleSmTex, new Vector2(475, Game1.SCREEN_HEIGHT - 376),
                 false, 0f);
+            level.AddObstacle(Game1.obstacleSmTex, new Vector2(335, -290), 
+                false, 0f);
+
+            //335,-240
             #endregion
         }
 
