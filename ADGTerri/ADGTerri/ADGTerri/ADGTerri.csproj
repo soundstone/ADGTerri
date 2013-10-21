@@ -114,6 +114,7 @@
     <Compile Include="InputHelper.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MenuManager.cs" />
+    <Compile Include="Obstacles.cs" />
     <Compile Include="Platforms.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

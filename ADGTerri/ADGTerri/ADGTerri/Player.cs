@@ -42,7 +42,7 @@ namespace ADGTerri
         bool bash = false;
         float bashSpeed = 0.2f;
         double bashTime, bashTimer = 0;
-
+        
         #region Physics Variables
 
         //initial gravity velocity

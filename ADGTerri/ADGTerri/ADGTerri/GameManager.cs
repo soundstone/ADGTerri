@@ -110,6 +110,8 @@ namespace ADGTerri
                         //update level
                         Levels[currentLevel].Update(gameTime);
 
+                        #region Platform Collision
+
                         foreach (Platform platform in Levels[currentLevel].Platforms)
                         {
                             //check collision and move if needed.
@@ -124,12 +126,30 @@ namespace ADGTerri
                                 }
                                 else
                                 {
-                                    gplayer.startY = 550;
+                                   // gplayer.startY = 550;
                                 }
                             }
-                            
+
                         }
-                            break;
+
+                        #endregion
+
+                        #region Obstacle Collision
+
+                        foreach (Obstacle obs in Levels[currentLevel].Obstacles)
+                        {
+                            if (gplayer.playerPos.X + gplayer.Width >= obs.Position.X &&
+                                gplayer.playerPos.X + gplayer.Width <= obs.Position.X + obs.Texture.Width)
+                            {
+                                if (gplayer.playerPos.Y >= obs.Position.Y &&
+                                    gplayer.playerPos.Y + gplayer.Height <= obs.Position.Y + obs.Texture.Height)
+                                {
+                                    gplayer.playerPos.X = obs.Position.X - gplayer.Width;
+                                }
+                            }
+                        }
+                        #endregion
+                        break;
                     }
             }
         }
@@ -178,19 +198,78 @@ namespace ADGTerri
 
             level.player = level.Actors[level.Actors.Count - 1] as Player;
 
+            //level1 Platforms Data Locations
+            #region Platforms Level 1
+
             level.AddPlatform(Game1.platformSmallTex, new Vector2(50, Game1.SCREEN_HEIGHT - 120),
                 false, 0f);
             level.AddPlatform(Game1.platformMedTex, new Vector2(200, Game1.SCREEN_HEIGHT - 200),
                 false, 0f);
             level.AddPlatform(Game1.platformLargeTex, new Vector2(400, Game1.SCREEN_HEIGHT - 300),
                 false, 0f);
-                
+            level.AddPlatform(Game1.platformMedTex, new Vector2(150, Game1.SCREEN_HEIGHT - 400),
+                false, 0f);
+            level.AddPlatform(Game1.platformMedTex, new Vector2(400, Game1.SCREEN_HEIGHT - 500),
+                false, 0f);
+            level.AddPlatform(Game1.platformLargeTex, new Vector2(250, Game1.SCREEN_HEIGHT - 600),
+                false, 0f);
+            level.AddPlatform(Game1.platformMedTex, new Vector2(300, Game1.SCREEN_HEIGHT - 800),
+                false, 0f);
+            level.AddPlatform(Game1.platformMedTex, new Vector2(150, Game1.SCREEN_HEIGHT - 950),
+                false, 0f);
+            level.AddPlatform(Game1.platformSmallTex, new Vector2(100, Game1.SCREEN_HEIGHT - 1150),
+                false, 0f);
+            level.AddPlatform(Game1.platformMedTex, new Vector2(50, Game1.SCREEN_HEIGHT - 1300),
+                false, 0f);
+            level.AddPlatform(Game1.platformSmallTex, new Vector2(175, Game1.SCREEN_HEIGHT - 1500),
+                false, 0f);
+            level.AddPlatform(Game1.platformSmallTex, new Vector2(200, Game1.SCREEN_HEIGHT - 1670),
+                false, 0f);
+            level.AddPlatform(Game1.platformSmallTex, new Vector2(500, Game1.SCREEN_HEIGHT - 1770),
+                false, 0f);
+
+            #endregion
+
+            #region Obstacles Level 1
+
+            level.AddObstacle(Game1.obstacleSmTex, new Vector2(475, Game1.SCREEN_HEIGHT - 376),
+                false, 0f);
+            #endregion
         }
 
         private static void DrawLogo(SpriteBatch spriteBatchHUD)
         {
             spriteBatchHUD.Draw(logoTexture, new Rectangle(0, 0, logoTexture.Width, logoTexture.Height),
                 new Color(255, 255, 255, (byte)MathHelper.Clamp(alphaValue, 0, 255)));
+        }
+
+        private static bool Inside(float x, float y, float left, float top, float right, float bottom)
+        {
+            return (x > left && x < right && y > top && y < bottom);
+        }
+
+        private static bool Collided(Rectangle rect1, Rectangle rect2, float border)
+        {
+            float width1 = rect1.Left + rect1.Right;
+            float height1 = rect1.Top + rect1.Bottom;
+            float width2 = rect2.Left + rect2.Right;
+            float height2 = rect2.Top + rect2.Bottom;
+
+            //check if corners overlap
+            if(Inside(rect1.X, rect1.Y, rect2.X + border,
+                rect2.Y + border, width2 - border, height2 - border))
+                return true;
+            if (Inside(rect1.X, height1, rect2.X + border,
+                rect2.Y + border, width2 - border, height2 - border))
+                return true;
+            if (Inside(width1, rect1.Y, rect2.X + border,
+                rect2.Y + border, width2 - border, height2 - border))
+                return true;
+            if (Inside(width1, height1, rect2.X + border,
+                rect2.Y + border, width2 - border, height2 - border))
+                return true;
+
+            return false;
         }
     }
 }

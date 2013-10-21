@@ -40,6 +40,7 @@ namespace ADGTerri
         public Player player;
         Texture2D backgroundTexture;
         List<Platform> platforms;
+        List<Obstacle> obstacles;
         Song levelSong;
         int checkIntro = 0;
 
@@ -48,10 +49,17 @@ namespace ADGTerri
         {
             get { return platforms; }
         }
+
+        public List<Obstacle> Obstacles
+        {
+            get { return obstacles; }
+        }
+
         public Level(Texture2D bgTex, Player p, Song song)
         {
             backgrounds = new List<BackgroundItem>();
             platforms = new List<Platform>();
+            obstacles = new List<Obstacle>();
             Actors = new List<Actor>();
             this.backgroundTexture = bgTex;
             player = p;
@@ -68,22 +76,11 @@ namespace ADGTerri
                 Actors[i].Update(gameTime);
             }
 
-            foreach (Platform platform in platforms)
-            {
-                //check collision and move if needed.
-                //if (player.playerPos.X + 30 >= platform.Position.X &&
-                //    player.playerPos.X + 30 <= platform.Position.X + platform.Texture.Width)
-                //{
-                //    if (player.playerPos.Y + player.Height >= platform.Position.Y &&
-                //        player.playerPos.Y + player.Height <= platform.Position.Y + platform.Texture.Height)
-                //    {
-                //        player.playerPos.Y = platform.Position.Y - player.Height;
-                //    }
-                //}
-
-                if (platform.MOVE)
-                    platform.MovePlatform();
-            }
+            //foreach (Platform platform in platforms)
+            //{
+            //        if (platform.MOVE)
+            //        platform.MovePlatform();
+            //}
         }
 
         public void Draw(SpriteBatch spriteBatch, SpriteBatch spriteBatchHUD)
@@ -105,6 +102,12 @@ namespace ADGTerri
                 platform.Draw(spriteBatch);
             }
 
+            //draw obstacles
+            foreach (Obstacle obstacle in obstacles)
+            {
+                obstacle.Draw(spriteBatch);
+            }
+
             //draw actors
             for (int i = 0; i < Actors.Count; i++)
             {
@@ -123,6 +126,11 @@ namespace ADGTerri
         public void AddPlatform(Texture2D tex, Vector2 pos, bool move, float spd)
         {
             platforms.Add(new Platform(tex, pos, move, spd));
+        }
+
+        public void AddObstacle(Texture2D tex, Vector2 pos, bool move, float spd)
+        {
+            obstacles.Add(new Obstacle(tex, pos, move, spd));
         }
 
         private void PlayIntro()

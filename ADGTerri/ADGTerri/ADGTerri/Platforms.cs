@@ -58,7 +58,7 @@ namespace ADGTerri
             this.platformPosition = pos;
             this.platformRect = new Rectangle(0, 0, platformTexture.Width, platformTexture.Height);
             this.movePlatform = move;
-            this.speed = 0;
+            this.speed = spd;
         }
 
         public Platform(Texture2D tex, Vector2 pos, Rectangle rect, bool move)
