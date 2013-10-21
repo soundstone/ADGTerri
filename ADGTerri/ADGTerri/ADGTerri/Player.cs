@@ -130,13 +130,15 @@ namespace ADGTerri
                     jumping = false;
                 }
             }
-            
-            if (!jumping)
+            if(!falling)
             {
-                if(InputHelper.WasKeyPressed(Keys.W))
+                if (!jumping)
                 {
-                    jumping = true;
-                    jumpSpeed = -20;
+                    if(InputHelper.WasKeyPressed(Keys.W))
+                    {
+                        jumping = true;
+                        jumpSpeed = -20;
+                    }
                 }
             }
 
@@ -144,6 +146,7 @@ namespace ADGTerri
             {
                 playerPos.Y += 9.8f;
             }
+
             #endregion
             #region Peck and Roll
             if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
@@ -200,6 +203,7 @@ namespace ADGTerri
             {
                 playerPos.Y = SCREEN_HEIGHT - Height;
                 startY = playerPos.Y;
+                falling = false;
             }
             #endregion
 

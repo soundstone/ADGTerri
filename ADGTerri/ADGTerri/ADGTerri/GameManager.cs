@@ -122,9 +122,11 @@ namespace ADGTerri
                                 {
                                     gplayer.playerPos.Y = platform.Position.Y - gplayer.Height;
                                     gplayer.startY = gplayer.playerPos.Y;
+                                    gplayer.falling = false;
                                 }
                                 else
                                 {
+                                    gplayer.falling = true;
                                     // gplayer.startY = 550;
                                 }
                             }
