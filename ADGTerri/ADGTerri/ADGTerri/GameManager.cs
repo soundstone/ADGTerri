@@ -135,19 +135,6 @@ namespace ADGTerri
 
                         #region Obstacle Collision
 
-                        /*foreach (Obstacle obs in Levels[currentLevel].Obstacles)
-                        {
-                            if (gplayer.playerPos.X + gplayer.Width >= obs.Position.X &&
-                                gplayer.playerPos.X + gplayer.Width <= obs.Position.X + obs.Texture.Width)
-                            {
-                                if (gplayer.playerPos.Y >= obs.Position.Y &&
-                                    gplayer.playerPos.Y + gplayer.Height <= obs.Position.Y + obs.Texture.Height)
-                                {
-                                    gplayer.playerPos.X = obs.Position.X - gplayer.Width;
-                                }
-                            }
-                        }*/
-
                         foreach (Obstacle obs in Levels[currentLevel].Obstacles)
                         {
                             if (!gplayer.bash)
