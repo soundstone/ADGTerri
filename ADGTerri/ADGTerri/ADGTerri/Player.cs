@@ -239,6 +239,9 @@ namespace ADGTerri
             if (bash)
                 spriteBatch.DrawString(Game1.fontSmall, "Peck!", new Vector2(20, 15), Color.Black);
 
+            spriteBatch.DrawString(Game1.fontSmall, "Player pos: \n (" + playerPos.X + "\n, " + playerPos.Y + ")",
+                    new Vector2(SCREEN_WIDTH - 150, 30), Color.Yellow);
+
             base.Draw(spriteBatch);
         }
 

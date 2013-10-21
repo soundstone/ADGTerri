@@ -133,8 +133,6 @@ namespace ADGTerri
             {
                 player.Draw(spriteBatchHUD);
                 player.DrawPlayer(spriteBatch);
-                spriteBatch.DrawString(fontSmall, "Player pos: (" + player.playerPos.X + "\n, " + player.playerPos.Y + ")",
-                    new Vector2(SCREEN_WIDTH - 300, player.playerPos.Y - 30), Color.Yellow);
             }
             spriteBatch.End();
             spriteBatchHUD.End();
