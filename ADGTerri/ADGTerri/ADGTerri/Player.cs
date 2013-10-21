@@ -34,8 +34,10 @@ namespace ADGTerri
         float layerDepth;
         public bool jumping;
         float jumpSpeed = 0;
+        public bool falling = false;
         public static GraphicsDeviceManager gDevice;
-        bool rolling = false;
+        public bool rolling = false;
+        public int facing = 1; //positive 1 = facing right, negetive 1 = facing left
         float rollSpeed = 25.0f;
         double rollTime, rollTimer = 0;
 
@@ -99,25 +101,36 @@ namespace ADGTerri
             #region Moving left / right and Jump
 
             if (InputHelper.IsKeyHeld(Keys.A))
+            {
+                facing = -1;
                 velocity.X = -moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
             else if (InputHelper.IsKeyHeld(Keys.D))
+            {
+                facing = 1;
                 velocity.X = moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
             else
-                    velocity.X = 0;
-            if(jumping)
+                velocity.X = 0;
+            
+            if (jumping)
             {
                 playerPos.Y += jumpSpeed;
                 jumpSpeed += 1;
-                    if(playerPos.Y >= startY)
-                    {
-                        playerPos.Y = startY;
-                        jumping = false;
-                    }
+                if (playerPos.Y >= startY)
+                {
+                    playerPos.Y = startY;
+                    jumping = false;
+                }
             }
-            else if( (InputHelper.WasKeyPressed(Keys.W)))
+            
+            if (!jumping)
             {
-                jumping = true;
-                jumpSpeed = -20;
+                if(InputHelper.WasKeyPressed(Keys.W))
+                {
+                    jumping = true;
+                    jumpSpeed = -20;
+                }
             }
 
             if (!jumping)
@@ -172,12 +185,15 @@ namespace ADGTerri
 
             if (playerPos.X < 0)
                 playerPos.X = 0;
-            if (playerPos.Y < floorLevel) 
-                playerPos.Y  = floorLevel;
+            if (playerPos.Y < floorLevel)
+                playerPos.Y = floorLevel;
             if (playerPos.X + Width > SCREEN_WIDTH)
                 playerPos.X = SCREEN_WIDTH - Width;
             if (playerPos.Y + Height > SCREEN_HEIGHT)
+            {
                 playerPos.Y = SCREEN_HEIGHT - Height;
+                startY = playerPos.Y;
+            }
             #endregion
 
             
@@ -205,14 +221,24 @@ namespace ADGTerri
             base.Update(gameTime);
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public void DrawPlayer(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(playerTexture, playerPos, Color.White);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
             if (rolling)
                 spriteBatch.DrawString(Game1.fontSmall, "Rolling!", new Vector2(20, 40), Color.Blue);
 
+            if (facing == 1)
+                spriteBatch.DrawString(Game1.fontSmall, "Facing: Right", new Vector2(20, 70), Color.Black);
+            else if (facing == -1)
+                spriteBatch.DrawString(Game1.fontSmall, "Facing: Left", new Vector2(20, 70), Color.Black);
+
             if (bash)
                 spriteBatch.DrawString(Game1.fontSmall, "Peck!", new Vector2(20, 15), Color.Black);
+
             base.Draw(spriteBatch);
         }
 

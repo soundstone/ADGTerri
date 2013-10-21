@@ -131,7 +131,8 @@ namespace ADGTerri
 
             if (GameManager.gameState == GameState.Playing)
             {
-                player.Draw(spriteBatch);
+                player.Draw(spriteBatchHUD);
+                player.DrawPlayer(spriteBatch);
                 spriteBatch.DrawString(fontSmall, "Player pos: (" + player.playerPos.X + "\n, " + player.playerPos.Y + ")",
                     new Vector2(SCREEN_WIDTH - 300, player.playerPos.Y - 30), Color.Yellow);
             }

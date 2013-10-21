@@ -115,18 +115,18 @@ namespace ADGTerri
                         foreach (Platform platform in Levels[currentLevel].Platforms)
                         {
                             //check collision and move if needed.
-                            if (gplayer.playerPos.X + 30 >= platform.Position.X &&
-                                gplayer.playerPos.X + 30 <= platform.Position.X + platform.Texture.Width)
-                            {
-                                if (gplayer.playerPos.Y + gplayer.Height >= platform.Position.Y &&
+                            if (gplayer.playerPos.Y + gplayer.Height >= platform.Position.Y &&
                                     gplayer.playerPos.Y + gplayer.Height <= platform.Position.Y + platform.Texture.Height)
+                            {
+                                if (gplayer.playerPos.X + 30 >= platform.Position.X &&
+                                    gplayer.playerPos.X + 30 <= platform.Position.X + platform.Texture.Width)
                                 {
                                     gplayer.playerPos.Y = platform.Position.Y - gplayer.Height;
                                     gplayer.startY = gplayer.playerPos.Y;
                                 }
                                 else
                                 {
-                                   // gplayer.startY = 550;
+                                    // gplayer.startY = 550;
                                 }
                             }
 
@@ -136,7 +136,7 @@ namespace ADGTerri
 
                         #region Obstacle Collision
 
-                        foreach (Obstacle obs in Levels[currentLevel].Obstacles)
+                        /*foreach (Obstacle obs in Levels[currentLevel].Obstacles)
                         {
                             if (gplayer.playerPos.X + gplayer.Width >= obs.Position.X &&
                                 gplayer.playerPos.X + gplayer.Width <= obs.Position.X + obs.Texture.Width)
@@ -145,6 +145,34 @@ namespace ADGTerri
                                     gplayer.playerPos.Y + gplayer.Height <= obs.Position.Y + obs.Texture.Height)
                                 {
                                     gplayer.playerPos.X = obs.Position.X - gplayer.Width;
+                                }
+                            }
+                        }*/
+
+                        foreach (Obstacle obs in Levels[currentLevel].Obstacles)
+                        {
+                            if (!gplayer.rolling)
+                            {
+                                //from left side
+                                if (gplayer.playerPos.X + gplayer.Width >= obs.Position.X &&
+                                    gplayer.playerPos.X + gplayer.Width <= obs.Position.X + obs.Texture.Width)
+                                {
+                                    if (gplayer.playerPos.Y >= obs.Position.Y &&
+                                        gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
+                                    {
+                                        gplayer.playerPos.X = obs.Position.X - gplayer.Width;
+                                    }
+                                }
+
+                                //from right side
+                                if (gplayer.playerPos.X <= obs.Position.X + obs.Texture.Width &&
+                                    gplayer.playerPos.X >= obs.Position.X)
+                                {
+                                    if (gplayer.playerPos.Y >= obs.Position.Y &&
+                                        gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
+                                    {
+                                        gplayer.playerPos.X = obs.Position.X + obs.Texture.Width;
+                                    }
                                 }
                             }
                         }
