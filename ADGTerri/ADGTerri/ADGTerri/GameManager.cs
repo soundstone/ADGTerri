@@ -25,7 +25,6 @@ namespace ADGTerri
         private static Vector2 respawnLocation;
         private static ContentManager Content;
         private static GraphicsDeviceManager graphics;
-        
 
         //logo Display variables
         private static Texture2D logoTexture;
