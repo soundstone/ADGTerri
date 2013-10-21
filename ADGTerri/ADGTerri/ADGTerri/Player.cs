@@ -32,6 +32,8 @@ namespace ADGTerri
 
         string elapsedTime;
 
+        int score;
+
         Texture2D playerTexture;
         public Rectangle playerRect;
         public Vector2 playerPos;
@@ -147,7 +149,7 @@ namespace ADGTerri
             if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
             {
                 rolling = true;
-                rollTime = gameTime.ElapsedGameTime.TotalSeconds * 100;
+                rollTime = gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
 
                 if (velocity.X > 0)
                     velocity.X += rollSpeed;
@@ -158,7 +160,7 @@ namespace ADGTerri
             }
             rollTimer += rollTime;
 
-            if (rollTimer >= 4)
+            if (rollTimer >= 0.3f)
             {
                 rolling = false;
                 rollTime = 0;
@@ -203,7 +205,7 @@ namespace ADGTerri
 
             
             
-            //#endregion 
+            #region Old Code
 
             //Movement
 
@@ -223,6 +225,8 @@ namespace ADGTerri
             //        break;
             //}
 
+            #endregion
+
             base.Update(gameTime);
         }
 
@@ -233,21 +237,31 @@ namespace ADGTerri
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            #region **REMOVE BEFORE FINAL DRAFT!!***
+            //Display when player activates "Roll" 
             if (rolling)
                 spriteBatch.DrawString(Game1.fontSmall, "Rolling!", new Vector2(20, 40), Color.Blue);
 
+            //display current facing direction
             if (facing == 1)
                 spriteBatch.DrawString(Game1.fontSmall, "Facing: Right", new Vector2(20, 70), Color.Black);
             else if (facing == -1)
                 spriteBatch.DrawString(Game1.fontSmall, "Facing: Left", new Vector2(20, 70), Color.Black);
 
+            //Display when player activates "Peck"
             if (bash)
                 spriteBatch.DrawString(Game1.fontSmall, "Peck!", new Vector2(20, 15), Color.Black);
 
+            //Draw Player coordinates
             spriteBatch.DrawString(Game1.fontSmall, "Player pos: \n (" + playerPos.X + "\n, " + playerPos.Y + ")",
-                    new Vector2(SCREEN_WIDTH - 150, 30), Color.Yellow);
+                    new Vector2(SCREEN_WIDTH - 150, 15), Color.Yellow);
+            #endregion
 
-            //spriteBatch.DrawString(Game1.fontSmall, elapsedTime, new Vector2(SCREEN_WIDTH / 2, 15), Color.Black);
+            //Draw Timer
+            //  ------------ Level timer here-------------
+
+            //Draw Score
+            spriteBatch.DrawString(Game1.fontSmall, "Score: " + score.ToString(), new Vector2(SCREEN_WIDTH / 2, 15), Color.Black);
 
             base.Draw(spriteBatch);
         }
