@@ -57,7 +57,9 @@ namespace ADGTerri
         //Vector2 GRAVITY = new Vector2(0f, 9.80f);
         private Vector2 velocity;
         const float gravity = 100f;
-        float moveSpeed = 500f;
+        float moveSpeed = 400f;
+        float decelerationValue = 1.5f;
+        bool running = false;
         //float jumpSpeed = 2000f;
 
         #endregion
@@ -101,6 +103,20 @@ namespace ADGTerri
 
         public override void Update(GameTime gameTime)
         {
+            if (!running)
+            {
+                if (facing == 1)
+                {
+                    if (velocity.X <= 0)
+                        velocity.X = 0;
+                }
+                else if (facing == -1)
+                {
+                    if (velocity.X >= 0)
+                        velocity.X = 0;
+                }
+                   
+            }
             playerPos += velocity;
             #region Input
             #region Moving left / right and Jump
@@ -109,15 +125,31 @@ namespace ADGTerri
             {
                 facing = -1;
                 velocity.X = -moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                running = true;
             }
             else if (InputHelper.IsKeyHeld(Keys.D))
             {
                 facing = 1;
                 velocity.X = moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                running = true;
             }
             else
-                velocity.X = 0;
-            
+            {
+                running = false;
+                //if (facing == 1)
+                //{
+                //    velocity.X -= decelerationValue;
+                //    if (velocity.X <= 0)
+                //        velocity.X = 0;
+                //}
+                //else if (facing == -1)
+                //{
+                //    velocity.X += decelerationValue;
+                //    if (velocity.X >= 0)
+                //        velocity.X = 0;
+                //}
+            }        
+
             if (jumping)
             {
                 playerPos.Y += jumpSpeed;
@@ -140,7 +172,7 @@ namespace ADGTerri
 
             if (!jumping)
             {
-                playerPos.Y += 9.8f;
+                playerPos.Y += 9.8f * 1;
             }
             #endregion
             #region Peck and Roll
@@ -222,6 +254,12 @@ namespace ADGTerri
             //    case PlayerState.Jumping:
             //        break;
             //}
+
+            //apply decleration to horizontal movement
+            //if (facing == 1)
+            //    velocity.X -= decelerationValue;
+            //else if (facing == -1)
+            //    velocity.X += decelerationValue;
 
             base.Update(gameTime);
         }
