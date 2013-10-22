@@ -168,6 +168,29 @@ namespace ADGTerri
                             }
                         }
                         #endregion
+
+                        #region Collectable Collision
+
+                        foreach (Collectable col in Levels[currentLevel].Collectables)
+                        {
+                            //from left side of collectable
+                            if (gplayer.playerPos.X + gplayer.Width >= col.Position.X &&
+                                gplayer.playerPos.X + gplayer.Width <= col.Position.X + col.Texture.Width)
+                            {
+                                if (gplayer.playerPos.Y >= col.Position.Y &&
+                                    gplayer.playerPos.Y <= col.Position.Y + col.Texture.Height)
+                                { 
+                                    //****Place holder actions***
+                                    col.Visible = false;
+                                    gplayer.score += 1;
+
+                                    //Animate collectable pick up?
+                                    //Play pick up sound?
+                                }
+                            }
+                        }
+
+                        #endregion
                         break;
                     }
             }
@@ -256,7 +279,12 @@ namespace ADGTerri
             level.AddObstacle(Game1.obstacleSmTex, new Vector2(335, -290), 
                 false, 0f);
 
-            //335,-240
+            #endregion
+
+            #region Collectables Level 1
+
+            level.AddCollectable(Game1.collectableTex, new Vector2(500, Game1.SCREEN_HEIGHT - Game1.collectableTex.Height), true);
+
             #endregion
         }
 

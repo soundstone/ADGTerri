@@ -36,6 +36,8 @@ namespace ADGTerri
         public static Texture2D platformLargeTex;
         public static Texture2D obstacleSmTex;
 
+        public static Texture2D collectableTex;
+
         Camera m_camera;
 
         Level[] level = new Level[5];
@@ -95,6 +97,8 @@ namespace ADGTerri
             platformMedTex = Content.Load<Texture2D>(@"Textures\platformMedium");
             platformSmallTex = Content.Load<Texture2D>(@"Textures\platformSmall");
             obstacleSmTex = Content.Load<Texture2D>(@"Textures\ObstacleSm");
+
+            collectableTex = Content.Load<Texture2D>(@"Textures\Collectable");
 
             MenuManager.CreateMenuItems();
             

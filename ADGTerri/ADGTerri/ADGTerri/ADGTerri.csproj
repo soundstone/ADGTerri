@@ -110,6 +110,7 @@
     <Compile Include="Actor.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Camera2.cs" />
+    <Compile Include="Collectables.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="InputHelper.cs" />
     <Compile Include="Level.cs" />

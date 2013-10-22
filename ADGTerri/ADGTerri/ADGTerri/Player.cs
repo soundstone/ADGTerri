@@ -32,7 +32,7 @@ namespace ADGTerri
 
         string elapsedTime;
 
-        int score;
+        public int score;
 
         Texture2D playerTexture;
         public Rectangle playerRect;
@@ -172,7 +172,7 @@ namespace ADGTerri
 
             if (InputHelper.WasKeyPressed(Keys.Space) && bash == false)
             {
-                 bash = true;
+                bash = true;
                 bashTime = gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
             }
 

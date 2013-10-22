@@ -41,6 +41,7 @@ namespace ADGTerri
         Texture2D backgroundTexture;
         List<Platform> platforms;
         List<Obstacle> obstacles;
+        List<Collectable> collectables;
         Song levelSong;
         int checkIntro = 0;
 
@@ -55,12 +56,19 @@ namespace ADGTerri
             get { return obstacles; }
         }
 
+        public List<Collectable> Collectables
+        {
+            get { return collectables; }
+        }
+
         public Level(Texture2D bgTex, Player p, Song song)
         {
-            backgrounds = new List<BackgroundItem>();
-            platforms = new List<Platform>();
-            obstacles = new List<Obstacle>();
-            Actors = new List<Actor>();
+            backgrounds  = new List<BackgroundItem>();
+            platforms    = new List<Platform>();
+            obstacles    = new List<Obstacle>();
+            collectables = new List<Collectable>();
+            Actors       = new List<Actor>();
+            
             this.backgroundTexture = bgTex;
             player = p;
             levelSong = song;   
@@ -108,6 +116,9 @@ namespace ADGTerri
                 obstacle.Draw(spriteBatch);
             }
 
+            foreach (Collectable collectable in collectables)
+                collectable.Draw(spriteBatch);
+
             //draw actors
             for (int i = 0; i < Actors.Count; i++)
             {
@@ -131,6 +142,11 @@ namespace ADGTerri
         public void AddObstacle(Texture2D tex, Vector2 pos, bool move, float spd)
         {
             obstacles.Add(new Obstacle(tex, pos, move, spd));
+        }
+
+        public void AddCollectable(Texture2D tex, Vector2 pos, bool vis)
+        {
+            collectables.Add(new Collectable(tex, pos, vis));
         }
 
         private void PlayIntro()
