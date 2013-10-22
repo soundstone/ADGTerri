@@ -129,6 +129,14 @@ namespace ADGTerri
                                    // gplayer.startY = 550;
                                 }
                             }
+                            //Rectangle platformRect = new Rectangle((int)platform.Position.X, (int)platform.Position.Y,
+                            //    (int)platform.Position.X + platform.Texture.Width, (int)platform.Position.Y + platform.Texture.Height);
+
+                            //if (Collided(gplayer.PlayerRectangle, platformRect, 1f))
+                            //{
+                            //    gplayer.playerPos.Y = platform.Position.Y - gplayer.Height;
+                            //    gplayer.startY = gplayer.playerPos.Y;
+                            //}
 
                         }
 

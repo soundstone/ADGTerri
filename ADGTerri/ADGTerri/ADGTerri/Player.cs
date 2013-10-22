@@ -91,6 +91,11 @@ namespace ADGTerri
             get { return playerTexture.Height; }
         }
 
+        public Rectangle PlayerRectangle
+        {
+            get { return playerRect; }
+        }
+
         public override void Update(GameTime gameTime)
         {
 
