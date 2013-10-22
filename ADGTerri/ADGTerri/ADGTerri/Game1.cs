@@ -28,6 +28,7 @@ namespace ADGTerri
         public static SpriteFont fontSmall;
         public static SpriteFont fontLarge;
         public static SpriteFont titleFont;
+        public static SpriteFont debugFont;
 
         public static Texture2D SprSinglePixel;
         public static Texture2D platformSmallTex;
@@ -81,6 +82,7 @@ namespace ADGTerri
             SprSinglePixel = Content.Load<Texture2D>(@"Textures\SinglePixel");
             bg = Content.Load<Texture2D>(@"Textures\bg");
             playerTex = Content.Load<Texture2D>(@"Textures\sprite");
+            debugFont = Content.Load<SpriteFont>(@"Fonts\debugFont");
 
             ///<summary> 
             /// Player and GameManager initialized in LoadContent due to order of start up. Must be here!

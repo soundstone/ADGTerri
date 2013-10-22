@@ -244,20 +244,20 @@ namespace ADGTerri
             #region **REMOVE BEFORE FINAL DRAFT!!***
             //Display when player activates "Roll" 
             if (rolling)
-                spriteBatch.DrawString(Game1.fontSmall, "Rolling!", new Vector2(20, 40), Color.Blue);
+                spriteBatch.DrawString(Game1.debugFont, "Rolling!", new Vector2(20, 40), Color.Blue);
 
             //display current facing direction
             if (facing == 1)
-                spriteBatch.DrawString(Game1.fontSmall, "Facing: Right", new Vector2(20, 70), Color.Black);
+                spriteBatch.DrawString(Game1.debugFont, "Facing: Right", new Vector2(20, 70), Color.Black);
             else if (facing == -1)
-                spriteBatch.DrawString(Game1.fontSmall, "Facing: Left", new Vector2(20, 70), Color.Black);
+                spriteBatch.DrawString(Game1.debugFont, "Facing: Left", new Vector2(20, 70), Color.Black);
 
             //Display when player activates "Peck"
             if (bash)
-                spriteBatch.DrawString(Game1.fontSmall, "Peck!", new Vector2(20, 15), Color.Black);
+                spriteBatch.DrawString(Game1.debugFont, "Peck!", new Vector2(20, 15), Color.Black);
 
             //Draw Player coordinates
-            spriteBatch.DrawString(Game1.fontSmall, "Player pos: \n (" + playerPos.X + "\n, " + playerPos.Y + ")",
+            spriteBatch.DrawString(Game1.debugFont, "Player pos: \n (" + playerPos.X + "\n, " + playerPos.Y + ")",
                     new Vector2(SCREEN_WIDTH - 150, 15), Color.Yellow);
             #endregion
 
@@ -265,7 +265,7 @@ namespace ADGTerri
             //  ------------ Level timer here-------------
 
             //Draw Score
-            spriteBatch.DrawString(Game1.fontSmall, "Score: " + score.ToString(), new Vector2(SCREEN_WIDTH / 2, 15), Color.Black);
+            spriteBatch.DrawString(Game1.debugFont, "Score: " + score.ToString(), new Vector2(SCREEN_WIDTH / 2, 15), Color.Black);
 
             base.Draw(spriteBatch);
         }
