@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Textures\bg.jpg</Source>
+      <Name>Textures\bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\bg.xnb</Output>
+      <Time>2013-10-19T08:57:40.2924189-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\sprite.png</Source>
+      <Name>Textures\sprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\sprite.xnb</Output>
+      <Time>2013-10-19T08:57:40.2924189-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\SinglePixel.jpg</Source>
+      <Name>Textures\SinglePixel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\SinglePixel.xnb</Output>
+      <Time>2013-10-19T08:57:40.2914189-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\platformLarge.png</Source>
+      <Name>Textures\platformLarge</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\platformLarge.xnb</Output>
+      <Time>2013-10-19T21:32:39.4258615-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\platformMedium.png</Source>
+      <Name>Textures\platformMedium</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\platformMedium.xnb</Output>
+      <Time>2013-10-19T21:32:39.4268616-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\platformSmall.png</Source>
+      <Name>Textures\platformSmall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\platformSmall.xnb</Output>
+      <Time>2013-10-19T21:32:39.4268616-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\RedTeam.png</Source>
+      <Name>Textures\RedTeam</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\RedTeam.xnb</Output>
+      <Time>2013-10-20T10:08:19.3896651-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\ObstacleSm.png</Source>
+      <Name>Textures\ObstacleSm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\ObstacleSm.xnb</Output>
+      <Time>2013-10-20T10:08:19.388665-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\collectable.png</Source>
+      <Name>Textures\collectable</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Textures\collectable.xnb</Output>
+      <Time>2013-10-22T08:18:09.9107621-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\FontLarge.spritefont</Source>
+      <Name>Fonts\FontLarge</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Fonts\FontLarge.xnb</Output>
+      <Time>2013-10-19T08:57:40.2894188-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\FontSmall.spritefont</Source>
+      <Name>Fonts\FontSmall</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Fonts\FontSmall.xnb</Output>
+      <Time>2013-10-19T08:57:40.2904188-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\TitleFont.spritefont</Source>
+      <Name>Fonts\TitleFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Fonts\TitleFont.xnb</Output>
+      <Time>2013-10-19T17:57:15.6726651-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\debugFont.spritefont</Source>
+      <Name>Fonts\debugFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Fonts\debugFont.xnb</Output>
+      <Time>2013-10-22T07:51:49.6483763-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Kalimba.mp3</Source>
+      <Name>Music\Kalimba</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Music\Kalimba.xnb</Output>
+      <Extra>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\Music\Kalimba.wma</Extra>
+      <Time>2013-10-20T10:08:19.387665-04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Release\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Release\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-06-13T07:54:35.2622354-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

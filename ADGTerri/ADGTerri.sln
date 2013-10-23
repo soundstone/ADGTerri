@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADGTerri", "ADGTerri\ADGTerri\ADGTerri.csproj", "{1E1B4022-5A77-4D82-8E0E-CBC43A8AABD3}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ADGTerriContent", "ADGTerri\ADGTerriContent\ADGTerriContent.contentproj", "{3F8EE69E-8423-4082-B621-C8FF97756CB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADGTerriContent", "ADGTerri\ADGTerriContent\ADGTerriContent.contentproj", "{3F8EE69E-8423-4082-B621-C8FF97756CB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

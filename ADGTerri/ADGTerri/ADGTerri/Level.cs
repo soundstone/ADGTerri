@@ -117,7 +117,11 @@ namespace ADGTerri
             }
 
             foreach (Collectable collectable in collectables)
-                collectable.Draw(spriteBatch);
+            {
+                if(collectable.Visible)
+                    collectable.Draw(spriteBatch);
+            
+            }
 
             //draw actors
             for (int i = 0; i < Actors.Count; i++)

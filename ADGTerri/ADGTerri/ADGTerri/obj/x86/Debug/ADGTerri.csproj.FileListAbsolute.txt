@@ -46,3 +46,7 @@ C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\AD
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\debugFont.xnb
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\debugFont.xnb
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\collectable.xnb
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\ADGTerri.exe.manifest
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\ADGTerri.application
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.exe.manifest
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.application

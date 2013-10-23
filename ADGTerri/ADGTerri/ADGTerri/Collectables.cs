@@ -37,7 +37,7 @@ namespace ADGTerri
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (visable)
+            //if (visable)
                 spriteBatch.Draw(collectTexture, collectPos, Color.White);
         }
     }
