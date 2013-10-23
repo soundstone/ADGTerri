@@ -100,7 +100,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>gi+kLHapJ7h3Djhl5bV4H8U3xoY=</dsig:DigestValue>
+        <dsig:DigestValue>0K17vHrSh81k3xmxzC50udMzBYk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -146,7 +146,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>91p8N5UCO6wxuVa9XhKj7K3C4kA=</dsig:DigestValue>
+      <dsig:DigestValue>clKnqHRgsuXxg6rV3I11zH9eOUA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\Kalimba.xnb" size="125">
