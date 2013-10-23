@@ -38,7 +38,7 @@ namespace ADGTerri
         public Rectangle playerRect;
         public Vector2 playerPos;
         public float startY;
-        float speed;
+        //float speed;
         float layerDepth;
         public bool jumping;
         float jumpSpeed = 0;

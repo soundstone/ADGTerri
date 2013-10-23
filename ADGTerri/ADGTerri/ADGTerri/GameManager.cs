@@ -36,8 +36,17 @@ namespace ADGTerri
         private static int checkIntro = 0;
         private static double frameTime;
 
+        #region Level Data Variables
+        #region Level 1
         //level audio
         static Song levelSong;
+        
+        //start time for Level
+        static float levelOneTime = 20.0f;
+
+        #endregion
+
+        #endregion
 
         public static int CurrentLevel
         {
@@ -233,7 +242,7 @@ namespace ADGTerri
 
         public static void CreateLevel()
         {
-            Level level = new Level(Game1.bg, gplayer, levelSong);
+            Level level = new Level(Game1.bg, gplayer, levelSong, levelOneTime);
 
             Levels.Add(level);
             level.Actors.Add(new Player(new Vector2(0, 550), graphics));
