@@ -12,4 +12,8 @@ Content\Fonts\FontSmall.xnb
 Content\Fonts\TitleFont.xnb
 Content\Fonts\debugFont.xnb
 Content\Music\Kalimba.xnb
+<<<<<<< HEAD
+=======
+Content\Textures\TitleScreen.xnb
+>>>>>>> origin/inertia
 Content\Music\Kalimba.wma

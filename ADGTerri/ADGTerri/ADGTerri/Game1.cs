@@ -37,6 +37,7 @@ namespace ADGTerri
         public static Texture2D obstacleSmTex;
 
         public static Texture2D collectableTex;
+        public static Texture2D titleScreenTexture;
 
         Camera m_camera;
 
@@ -85,6 +86,7 @@ namespace ADGTerri
             bg = Content.Load<Texture2D>(@"Textures\bg");
             playerTex = Content.Load<Texture2D>(@"Textures\sprite");
             debugFont = Content.Load<SpriteFont>(@"Fonts\debugFont");
+            titleScreenTexture = Content.Load<Texture2D>(@"Textures\TitleScreen");
 
             ///<summary> 
             /// Player and GameManager initialized in LoadContent due to order of start up. Must be here!

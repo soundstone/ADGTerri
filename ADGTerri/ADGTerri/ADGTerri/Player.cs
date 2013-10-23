@@ -38,7 +38,7 @@ namespace ADGTerri
         public Rectangle playerRect;
         public Vector2 playerPos;
         public float startY;
-        float speed;
+        //float speed;
         float layerDepth;
         public bool jumping;
         float jumpSpeed = 0;
@@ -55,11 +55,14 @@ namespace ADGTerri
         
         #region Physics Variables
 
-        //initial gravity velocity
-        //Vector2 GRAVITY = new Vector2(0f, 9.80f);
+        float elapsed; //keep track of gameTime cycles        
         private Vector2 velocity;
+        Vector2 drift;
         const float gravity = 100f;
         float moveSpeed = 500f;
+        Vector2 momentum;
+        Vector2 force;
+        float mass = 500f;
         //float jumpSpeed = 2000f;
 
         #endregion
@@ -103,26 +106,41 @@ namespace ADGTerri
 
         public override void Update(GameTime gameTime)
         {
-            playerPos += velocity;
+
+            elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            force = Vector2.Zero;
+            drift = new Vector2((float)Math.Cos(velocity.X) + 4.3f, (float)Math.Sin(velocity.Y));
+            
+            playerPos += velocity + new Vector2(elapsed, elapsed);
             #region Input
             #region Moving left / right and Jump
 
             if (InputHelper.IsKeyHeld(Keys.A))
             {
                 facing = -1;
-                velocity.X = -moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                //velocity.X = -moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                force = (drift * 20f) * -1;
             }
             else if (InputHelper.IsKeyHeld(Keys.D))
             {
                 facing = 1;
-                velocity.X = moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                //velocity.X = moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                force = drift * 20f;
             }
             else
+            {
                 velocity.X = 0;
-            
+            }
+
+            momentum += force;
+            momentum *= 0.99f;
+
+            velocity = momentum / mass;
+
             if (jumping)
             {
                 playerPos.Y += jumpSpeed;
+                
                 jumpSpeed += 1;
                 if (playerPos.Y >= startY)
                 {
@@ -187,6 +205,7 @@ namespace ADGTerri
 
             #endregion
             #endregion
+            
             //Players collision w/ level bounds
             #region Collision
 

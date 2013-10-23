@@ -126,12 +126,15 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <SubType>Designer</SubType>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/inertia
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Textures\collectable.png">
-      <Name>collectable</Name>
+    <Compile Include="Textures\TitleScreen.png">
+      <Name>TitleScreen</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
 

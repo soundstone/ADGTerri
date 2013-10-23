@@ -13,3 +13,7 @@ Content\Fonts\TitleFont.xnb
 Content\Fonts\debugFont.xnb
 Content\Music\Kalimba.xnb
 Content\Music\Kalimba.wma
+<<<<<<< HEAD
+=======
+Content\Textures\TitleScreen.xnb
+>>>>>>> origin/inertia

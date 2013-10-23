@@ -43,8 +43,10 @@ namespace ADGTerri
         List<Obstacle> obstacles;
         List<Collectable> collectables;
         Song levelSong;
+        float levelTime = 0.0f;
         int checkIntro = 0;
-
+        Timer levelTimer;
+        
 
         public List<Platform> Platforms
         {
@@ -61,7 +63,7 @@ namespace ADGTerri
             get { return collectables; }
         }
 
-        public Level(Texture2D bgTex, Player p, Song song)
+        public Level(Texture2D bgTex, Player p, Song song, float time)
         {
             backgrounds  = new List<BackgroundItem>();
             platforms    = new List<Platform>();
@@ -71,12 +73,29 @@ namespace ADGTerri
             
             this.backgroundTexture = bgTex;
             player = p;
-            levelSong = song;   
+            levelSong = song;
+            levelTime = time;
+            Initialize();
         }
-        
+
+
+        private void Initialize()
+        {
+            levelTimer = new Timer();
+        }
+
         public void Update(GameTime gameTime)
         {
             KeyboardState curKeyboardState = Keyboard.GetState();
+
+            if (levelTimer.isActive == false)
+            {
+                levelTimer.Set(gameTime, levelTime);
+            }
+            else
+            {
+                levelTimer.checkTimer(gameTime);
+            }
 
             //update actors
             for (int i = 0; i < Actors.Count; i++)
@@ -98,6 +117,7 @@ namespace ADGTerri
             //draw Back-background
             spriteBatch.Draw(backgroundTexture, new Vector2(0, Game1.SCREEN_HEIGHT - backgroundTexture.Height), Color.White);
 
+            DrawTimer(spriteBatchHUD);
             //draw backgrounds
             for (int i = 0; i < backgrounds.Count; i++)
             {
@@ -161,6 +181,12 @@ namespace ADGTerri
             else 
                 MediaPlayer.Play(levelSong);
             checkIntro = 1;
+        }
+
+        private void DrawTimer(SpriteBatch spriteBatchHUD)
+        {
+            spriteBatchHUD.DrawString(Game1.debugFont, levelTimer.displayValue,
+                new Vector2(Game1.SCREEN_WIDTH / 2, 30), Color.White);
         }
         #endregion
 
