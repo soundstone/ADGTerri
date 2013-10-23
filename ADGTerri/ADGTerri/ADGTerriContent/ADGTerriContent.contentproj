@@ -126,6 +126,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <SubType>Designer</SubType>
+<<<<<<< HEAD
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +134,8 @@
       <Name>collectable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+=======
+>>>>>>> 7f20cb2fb8aa2e985263fb70a96b91b1f0e04373
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
