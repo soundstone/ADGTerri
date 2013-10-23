@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\bg.xnb</Output>
-      <Time>2013-10-19T20:23:24.3423881-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\bg.xnb</Output>
+      <Time>2013-10-19T08:57:40.2924189-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\sprite.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\sprite.xnb</Output>
-      <Time>2013-10-19T20:23:24.3443883-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\sprite.xnb</Output>
+      <Time>2013-10-19T08:57:40.2924189-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\SinglePixel.jpg</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\SinglePixel.xnb</Output>
-      <Time>2013-10-19T20:23:24.340388-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\SinglePixel.xnb</Output>
+      <Time>2013-10-19T08:57:40.2914189-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\platformLarge.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformLarge.xnb</Output>
-      <Time>2013-10-19T20:23:27.9285933-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformLarge.xnb</Output>
+      <Time>2013-10-19T21:32:39.4258615-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\platformMedium.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformMedium.xnb</Output>
-      <Time>2013-10-19T20:23:27.9385938-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformMedium.xnb</Output>
+      <Time>2013-10-19T21:32:39.4268616-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\platformSmall.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformSmall.xnb</Output>
-      <Time>2013-10-19T20:23:27.9395939-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\platformSmall.xnb</Output>
+      <Time>2013-10-19T21:32:39.4268616-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\RedTeam.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\RedTeam.xnb</Output>
-      <Time>2013-10-20T02:11:42.9357193-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\RedTeam.xnb</Output>
+      <Time>2013-10-20T10:08:19.3896651-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\ObstacleSm.png</Source>
@@ -70,8 +70,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\ObstacleSm.xnb</Output>
-      <Time>2013-10-20T03:19:07.9550812-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\ObstacleSm.xnb</Output>
+      <Time>2013-10-20T10:08:19.388665-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\collectable.png</Source>
+      <Name>Textures\collectable</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\collectable.xnb</Output>
+      <Time>2013-10-22T08:18:09.9107621-04:00</Time>
     </Item>
     <Item>
       <Source>Fonts\FontLarge.spritefont</Source>
@@ -79,8 +88,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontLarge.xnb</Output>
-      <Time>2013-10-19T20:23:24.3343877-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontLarge.xnb</Output>
+      <Time>2013-10-19T08:57:40.2894188-04:00</Time>
     </Item>
     <Item>
       <Source>Fonts\FontSmall.spritefont</Source>
@@ -88,8 +97,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontSmall.xnb</Output>
-      <Time>2013-10-19T20:23:24.3363878-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\FontSmall.xnb</Output>
+      <Time>2013-10-19T08:57:40.2904188-04:00</Time>
     </Item>
     <Item>
       <Source>Fonts\TitleFont.spritefont</Source>
@@ -97,8 +106,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\TitleFont.xnb</Output>
-      <Time>2013-10-19T20:23:24.3383879-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\TitleFont.xnb</Output>
+      <Time>2013-10-19T17:57:15.6726651-04:00</Time>
     </Item>
     <Item>
       <Source>Fonts\debugFont.spritefont</Source>
@@ -106,8 +115,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\debugFont.xnb</Output>
-      <Time>2013-10-21T22:41:44.1933992-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\debugFont.xnb</Output>
+      <Time>2013-10-22T07:51:49.6483763-04:00</Time>
     </Item>
     <Item>
       <Source>Music\Kalimba.mp3</Source>
@@ -115,9 +124,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.xnb</Output>
-      <Extra>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.wma</Extra>
-      <Time>2013-10-20T03:19:21.8088736-04:00</Time>
+      <Output>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.xnb</Output>
+      <Extra>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.wma</Extra>
+      <Time>2013-10-20T10:08:19.387665-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -125,10 +134,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerriContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -157,7 +166,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-10-18T11:51:09.841127-04:00</Value>
+        <Value>2012-06-13T07:54:35.2622354-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
