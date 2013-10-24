@@ -67,6 +67,8 @@ namespace ADGTerri
         float mass = 500f;
         private Vector2 fallSpeed = new Vector2(0, 20);
 
+        Vector2 resistance = new Vector2(2, 0);
+
         #endregion
 
 
@@ -147,6 +149,7 @@ namespace ADGTerri
 
                 playerPos += velocity + new Vector2(elapsed, elapsed);
                 #region Input
+
                 #region Moving left / right and Jump
 
                 if (InputHelper.IsKeyHeld(Keys.A))
@@ -164,6 +167,24 @@ namespace ADGTerri
                 else
                 {
                     velocity.X = 0;
+                    force = Vector2.Zero;
+                    
+                    if(facing == 1)
+                    {
+                        if(momentum.X >= 0)
+                            momentum -= resistance * 10;
+
+                        if (momentum.X <= 0)
+                            momentum.X = 0;
+                    }
+                    else if (facing == -1)
+                    {
+                        if (momentum.X <= 0)
+                            momentum += resistance * 10;
+
+                        if (momentum.X >= 0)
+                            momentum.X = 0;
+                    }
                 }
 
                 momentum += force;
@@ -206,6 +227,7 @@ namespace ADGTerri
                 }
 
                 #endregion
+
                 #region Peck and Roll
                 if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
                 {
@@ -244,6 +266,7 @@ namespace ADGTerri
                 }
 
                 #endregion
+
                 #endregion
 
                 //Players collision w/ level bounds

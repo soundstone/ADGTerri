@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ADGTerri.exe" size="33280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ADGTerri.exe" size="33792">
       <assemblyIdentity name="ADGTerri" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>D+BAn/byT1w3lUsj/gG1q4FNRu4=</dsig:DigestValue>
+        <dsig:DigestValue>D5cc5UeekyLnn9dRfZRYwxcwo+Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
