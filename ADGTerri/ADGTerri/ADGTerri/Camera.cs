@@ -12,7 +12,7 @@ namespace ADGTerri
     {
         public Matrix transform;
         Viewport view;
-        Vector2 center;
+        Vector2  center;
 
         public Camera(Viewport _view)
         {

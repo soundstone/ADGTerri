@@ -39,6 +39,8 @@ namespace ADGTerri
         public Vector2 playerPos;
         public float startY;
         //float speed;
+        private bool dead = false;
+        
         float layerDepth;
         public bool jumping;
         float jumpSpeed = 0;
@@ -63,19 +65,21 @@ namespace ADGTerri
         Vector2 momentum;
         Vector2 force;
         float mass = 500f;
-        //float jumpSpeed = 2000f;
+        private Vector2 fallSpeed = new Vector2(0, 20);
 
         #endregion
 
 
-        //movement
-        //Vector2 jumpingPosition;
-        //float landingHeight; //need to know where landing of jump is
+        public bool Dead
+        {
+            get { return dead; }
+        }
+
         #endregion
 
         #region Ctor
 
-        public Player(Vector2 position, GraphicsDeviceManager graphics)
+        public Player(Vector2 position, GraphicsDeviceManager graphics, ContentManager content)
             :base(position)
         {
             this.playerTexture = Game1.playerTex;
@@ -83,6 +87,26 @@ namespace ADGTerri
             velocity = new Vector2(0, 0);
             gDevice = graphics;
             this.startY = playerPos.Y;
+
+            animations.Add("idle",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Textures\thanksbird"),
+                    27,
+                    "idle"));
+            animations["idle"].LoopAnimation = true;
+            animations.Add("run",
+                new AnimationStrip(
+                    content.Load<Texture2D>(@"Textures\thanksbird"),
+                    27,
+                    "run"));
+            animations["run"].LoopAnimation = true;
+            frameWidth = 26;
+            frameHeight = 28;
+            CollisionRectangle = new Rectangle(9, 1, 38, 46);
+            layerDepth = 0.825f;
+            enabled = true;
+            PlayAnimation("idle");
+                    
         }
 
         #endregion
@@ -106,150 +130,158 @@ namespace ADGTerri
 
         public override void Update(GameTime gameTime)
         {
-
-            elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            force = Vector2.Zero;
-            drift = new Vector2((float)Math.Cos(velocity.X) + 4.3f, (float)Math.Sin(velocity.Y));
-            
-            playerPos += velocity + new Vector2(elapsed, elapsed);
-            #region Input
-            #region Moving left / right and Jump
-
-            if (InputHelper.IsKeyHeld(Keys.A))
+            if (!Dead)
             {
-                facing = -1;
-                //velocity.X = -moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                force = (drift * 20f) * -1;
-            }
-            else if (InputHelper.IsKeyHeld(Keys.D))
-            {
-                facing = 1;
-                //velocity.X = moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                force = drift * 20f;
-            }
-            else
-            {
-                velocity.X = 0;
-            }
-
-            momentum += force;
-            momentum *= 0.99f;
-
-            velocity = momentum / mass;
-
-            if (jumping)
-            {
-                playerPos.Y += jumpSpeed;
+                string newAnimation = "idle";
                 
-                jumpSpeed += 1;
-                if (playerPos.Y >= startY)
+                elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                force = Vector2.Zero;
+                drift = new Vector2((float)Math.Cos(velocity.X) + 4.3f, (float)Math.Sin(velocity.Y));
+
+                playerPos += velocity + new Vector2(elapsed, elapsed);
+                #region Input
+                #region Moving left / right and Jump
+
+                if (InputHelper.IsKeyHeld(Keys.A))
                 {
-                    playerPos.Y = startY;
-                    jumping = false;
+                    facing = -1;
+                    newAnimation = "run";
+                    force = (drift * 20f) * -1;
                 }
-            }
-            if(!falling)
-            {
-                if (!jumping)
+                else if (InputHelper.IsKeyHeld(Keys.D))
                 {
-                    if(InputHelper.WasKeyPressed(Keys.W))
+                    facing = 1;
+                    newAnimation = "run";
+                    force = drift * 20f;
+                }
+                else
+                {
+                    velocity.X = 0;
+                }
+
+                momentum += force;
+                momentum *= 0.99f;
+
+                velocity = momentum / mass;
+
+                if (jumping)
+                {
+                    playerPos.Y += jumpSpeed;
+
+                    jumpSpeed += 1;
+                    if (playerPos.Y >= startY)
                     {
-                        jumping = true;
-                        jumpSpeed = -20;
+                        playerPos.Y = startY;
+                        jumping = false;
                     }
                 }
+                if (!falling)
+                {
+                    if (!jumping)
+                    {
+                        if (InputHelper.WasKeyPressed(Keys.W))
+                        {
+                            jumping = true;
+                            jumpSpeed = -20;
+                            newAnimation = "jump";
+                        }
+                    }
+                }
+                if (currentAnimation == "jump")
+                    newAnimation = "jump";
+                if (newAnimation != currentAnimation)
+                    PlayAnimation(newAnimation);
+
+                if (!jumping)
+                {
+                    playerPos.Y += 9.8f;
+                }
+
+                #endregion
+                #region Peck and Roll
+                if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
+                {
+                    rolling = true;
+                    rollTime = gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
+
+                    if (velocity.X > 0)
+                        velocity.X += rollSpeed;
+                    else if (velocity.X < 0)
+                        velocity.X -= rollSpeed;
+                    else
+                        velocity.X = 0;
+                }
+                rollTimer += rollTime;
+
+                if (rollTimer >= 0.3f)
+                {
+                    rolling = false;
+                    rollTime = 0;
+                    rollTimer = 0;
+                }
+
+                if (InputHelper.WasKeyPressed(Keys.Space) && bash == false)
+                {
+                    bash = true;
+                    bashTime = gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
+                }
+
+                bashTimer += bashTime;
+
+                if (bashTimer >= 0.3f)
+                {
+                    bash = false;
+                    bashTimer = 0;
+                    bashTime = 0;
+                }
+
+                #endregion
+                #endregion
+
+                //Players collision w/ level bounds
+                #region Collision
+
+                //player collision box
+                playerRect = new Rectangle((int)playerPos.X, (int)playerPos.Y, Width, Height);
+
+                if (playerPos.X < 0)
+                    playerPos.X = 0;
+                if (playerPos.Y < floorLevel)
+                    playerPos.Y = floorLevel;
+                if (playerPos.X + Width > SCREEN_WIDTH)
+                    playerPos.X = SCREEN_WIDTH - Width;
+                if (playerPos.Y + Height > SCREEN_HEIGHT)
+                {
+                    playerPos.Y = SCREEN_HEIGHT - Height;
+                    startY = playerPos.Y;
+                    falling = false;
+                }
+                #endregion
+
+
+
+                #region Old Code
+
+                //Movement
+
+                //KeyboardState keystate = Keyboard.GetState();
+                //switch (state)
+                //{
+                //    case PlayerState.Idle:
+                //    case PlayerState.Walking:
+                //        if (keystate.IsKeyDown(Keys.A))
+                //        {
+                //            landingHeight = playerPos.Y;
+                //            jumpingPosition = playerPos;
+
+                //        }
+                //        break;
+                //    case PlayerState.Jumping:
+                //        break;
+                //}
+
+                #endregion
             }
-
-            if (!jumping)
-            {
-                playerPos.Y += 9.8f;
-            }
-
-            #endregion
-            #region Peck and Roll
-            if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
-            {
-                rolling = true;
-                rollTime = gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
-
-                if (velocity.X > 0)
-                    velocity.X += rollSpeed;
-                else if (velocity.X < 0)
-                    velocity.X -= rollSpeed;
-                else
-                    velocity.X = 0;
-            }
-            rollTimer += rollTime;
-
-            if (rollTimer >= 0.3f)
-            {
-                rolling = false;
-                rollTime = 0;
-                rollTimer = 0;
-            }
-
-            if (InputHelper.WasKeyPressed(Keys.Space) && bash == false)
-            {
-                bash = true;
-                bashTime = gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
-            }
-
-            bashTimer += bashTime;
-
-            if (bashTimer >= 0.3f)
-            {
-                bash = false;
-                bashTimer = 0;
-                bashTime = 0;
-            }
-
-            #endregion
-            #endregion
-            
-            //Players collision w/ level bounds
-            #region Collision
-
-            //player collision box
-            playerRect = new Rectangle((int)playerPos.X, (int)playerPos.Y, Width, Height);
-
-            if (playerPos.X < 0)
-                playerPos.X = 0;
-            if (playerPos.Y < floorLevel)
-                playerPos.Y = floorLevel;
-            if (playerPos.X + Width > SCREEN_WIDTH)
-                playerPos.X = SCREEN_WIDTH - Width;
-            if (playerPos.Y + Height > SCREEN_HEIGHT)
-            {
-                playerPos.Y = SCREEN_HEIGHT - Height;
-                startY = playerPos.Y;
-                falling = false;
-            }
-            #endregion
-
-            
-            
-            #region Old Code
-
-            //Movement
-
-            //KeyboardState keystate = Keyboard.GetState();
-            //switch (state)
-            //{
-            //    case PlayerState.Idle:
-            //    case PlayerState.Walking:
-            //        if (keystate.IsKeyDown(Keys.A))
-            //        {
-            //            landingHeight = playerPos.Y;
-            //            jumpingPosition = playerPos;
-                        
-            //        }
-            //        break;
-            //    case PlayerState.Jumping:
-            //        break;
-            //}
-
-            #endregion
-
             base.Update(gameTime);
         }
 

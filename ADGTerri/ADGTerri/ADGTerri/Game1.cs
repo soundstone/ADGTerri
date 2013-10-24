@@ -91,7 +91,7 @@ namespace ADGTerri
             ///<summary> 
             /// Player and GameManager initialized in LoadContent due to order of start up. Must be here!
             /// </summary> 
-            player = new Player(playerStartPosition, graphics);
+            player = new Player(playerStartPosition, graphics, Content);
             //initialize the GameManager
             GameManager.Initialize(Content, player, graphics);
 

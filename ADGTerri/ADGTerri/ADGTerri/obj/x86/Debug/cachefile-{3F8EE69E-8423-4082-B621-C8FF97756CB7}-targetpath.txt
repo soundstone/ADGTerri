@@ -13,3 +13,4 @@ Content\Fonts\debugFont.xnb
 Content\Music\Kalimba.xnb
 Content\Music\Kalimba.wma
 Content\Textures\TitleScreen.xnb
+Content\Textures\thanksbird.xnb

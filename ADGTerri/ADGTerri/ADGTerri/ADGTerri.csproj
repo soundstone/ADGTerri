@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actor.cs" />
+    <Compile Include="AnimationStrip.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Camera2.cs" />
     <Compile Include="Collectables.cs" />

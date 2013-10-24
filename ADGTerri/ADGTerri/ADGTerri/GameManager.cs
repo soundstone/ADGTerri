@@ -245,7 +245,7 @@ namespace ADGTerri
             Level level = new Level(Game1.bg, gplayer, levelSong, levelOneTime);
 
             Levels.Add(level);
-            level.Actors.Add(new Player(new Vector2(0, 550), graphics));
+            level.Actors.Add(new Player(new Vector2(0, 550), graphics, Content));
 
             level.player = level.Actors[level.Actors.Count - 1] as Player;
 
