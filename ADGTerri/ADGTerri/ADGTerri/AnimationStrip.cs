@@ -13,7 +13,7 @@ namespace ADGTerri
         private int frameWidth;
         private int frameHeight;
         private float frameTimer = 0f;
-        private float frameDelay = 0.05f;
+        private float frameDelay = 0.07f;
         private int currentFrame;
         private bool loopAnimation = true;
         private bool finishedPlaying = false;

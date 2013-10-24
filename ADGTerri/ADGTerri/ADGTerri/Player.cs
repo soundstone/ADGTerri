@@ -91,7 +91,7 @@ namespace ADGTerri
             animations.Add("idle",
                 new AnimationStrip(
                     content.Load<Texture2D>(@"Textures\thanksbird"),
-                    27,
+                    28,
                     "idle"));
             animations["idle"].LoopAnimation = true;
             animations.Add("run",
@@ -136,7 +136,7 @@ namespace ADGTerri
                 
                 elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
                 force = Vector2.Zero;
-                drift = new Vector2((float)Math.Cos(velocity.X) + 4.3f, (float)Math.Sin(velocity.Y));
+                drift = new Vector2((float)Math.Cos(velocity.X) + 2.3f, (float)Math.Sin(velocity.Y));
 
                 playerPos += velocity + new Vector2(elapsed, elapsed);
                 #region Input
@@ -146,13 +146,13 @@ namespace ADGTerri
                 {
                     facing = -1;
                     newAnimation = "run";
-                    force = (drift * 20f) * -1;
+                    force = (drift * 50f) * -1;
                 }
                 else if (InputHelper.IsKeyHeld(Keys.D))
                 {
                     facing = 1;
                     newAnimation = "run";
-                    force = drift * 20f;
+                    force = drift * 50f;
                 }
                 else
                 {
@@ -288,6 +288,7 @@ namespace ADGTerri
         public void DrawPlayer(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(playerTexture, playerPos, Color.White);
+            
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -314,7 +315,7 @@ namespace ADGTerri
 
             //Draw Timer
             //  ------------ Level timer here-------------
-
+            
             //Draw Score
             spriteBatch.DrawString(Game1.debugFont, "Score: " + score.ToString(), new Vector2(SCREEN_WIDTH / 2, 15), Color.Black);
 

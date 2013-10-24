@@ -100,7 +100,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>eUTa5fMf/WintVXfrY8bxYJBfvo=</dsig:DigestValue>
+        <dsig:DigestValue>WImN8XlwW40Clz4eFLT5U0Fl1ug=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -230,13 +230,13 @@
       <dsig:DigestValue>OVDQoNHlWFcLCyvbUe1U2cgNE88=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Textures\thanksbird.xnb" size="33115">
+  <file name="Content\Textures\thanksbird.xnb" size="35915">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>QfWnulWgVbsEwD3FNn/vdi7TrRQ=</dsig:DigestValue>
+      <dsig:DigestValue>oBOhZLtqWszB+eWG2y7/vS5gnJk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\TitleScreen.xnb" size="1920187">
