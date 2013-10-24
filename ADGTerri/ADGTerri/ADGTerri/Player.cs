@@ -159,11 +159,6 @@ namespace ADGTerri
                     velocity.X = 0;
                 }
 
-                momentum += force;
-                momentum *= 0.99f;
-
-                velocity = momentum / mass;
-
                 if (jumping)
                 {
                     playerPos.Y += jumpSpeed;
@@ -175,6 +170,7 @@ namespace ADGTerri
                         jumping = false;
                     }
                 }
+
                 if (!falling)
                 {
                     if (!jumping)
@@ -184,9 +180,11 @@ namespace ADGTerri
                             jumping = true;
                             jumpSpeed = -20;
                             newAnimation = "jump";
+
                         }
                     }
                 }
+
                 if (currentAnimation == "jump")
                     newAnimation = "jump";
                 if (newAnimation != currentAnimation)
@@ -194,10 +192,11 @@ namespace ADGTerri
 
                 if (!jumping)
                 {
-                    playerPos.Y += 9.8f;
+                    playerPos.Y += 10.8f;
                 }
 
                 #endregion
+
                 #region Peck and Roll
                 if (InputHelper.WasKeyPressed(Keys.S) && rolling == false)
                 {
@@ -233,9 +232,14 @@ namespace ADGTerri
                     bash = false;
                     bashTimer = 0;
                     bashTime = 0;
-                }
+                }     
 
                 #endregion
+
+                momentum += force;
+                momentum *= 0.99f;
+
+                velocity = momentum / mass;
                 #endregion
 
                 //Players collision w/ level bounds
