@@ -58,3 +58,4 @@ C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\TitleScreen.xnb
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\thanksbird.xnb
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\collectable.xnb
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\thanksbird2.xnb

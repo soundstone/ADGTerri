@@ -39,7 +39,7 @@ namespace ADGTerri
                 if (gameTime.TotalGameTime.Seconds > this.startCount)
                 {
                     this.startCount = gameTime.TotalGameTime.Seconds;
-                    this.endCount = (this.endCount - 0.1f);
+                    this.endCount = (this.endCount - 1f);
                     //this.displayValue = this.endCount.ToString();
                     this.displayValue = string.Format("{0:0.00}", this.endCount.ToString());
                     if (this.endCount < 0)

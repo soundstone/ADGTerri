@@ -90,13 +90,13 @@ namespace ADGTerri
 
             animations.Add("idle",
                 new AnimationStrip(
-                    content.Load<Texture2D>(@"Textures\thanksbird"),
+                    content.Load<Texture2D>(@"Textures\thanksbird2"),
                     27,
                     "idle"));
             animations["idle"].LoopAnimation = true;
             animations.Add("run",
                 new AnimationStrip(
-                    content.Load<Texture2D>(@"Textures\thanksbird"),
+                    content.Load<Texture2D>(@"Textures\thanksbird2"),
                     27,
                     "run"));
             animations["run"].LoopAnimation = true;
@@ -190,7 +190,7 @@ namespace ADGTerri
                         if (InputHelper.WasKeyPressed(Keys.W))
                         {
                             jumping = true;
-                            jumpSpeed = -20;
+                            jumpSpeed = -15.8f;
                             newAnimation = "jump";
                         }
                     }

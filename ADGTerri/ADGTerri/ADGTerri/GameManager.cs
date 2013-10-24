@@ -42,7 +42,7 @@ namespace ADGTerri
         static Song levelSong;
         
         //start time for Level
-        static float levelOneTime = 20.0f;
+        static float levelOneTime = 20f;
 
         #endregion
 
