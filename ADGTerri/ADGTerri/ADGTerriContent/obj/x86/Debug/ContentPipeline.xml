@@ -74,6 +74,24 @@
       <Time>2013-10-20T03:19:07.9550812-04:00</Time>
     </Item>
     <Item>
+      <Source>Textures\TitleScreen.png</Source>
+      <Name>Textures\TitleScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\TitleScreen.xnb</Output>
+      <Time>2013-10-23T17:12:56.2182661-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\thanksbird.png</Source>
+      <Name>Textures\thanksbird</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\thanksbird.xnb</Output>
+      <Time>2013-10-23T21:06:24.3554857-04:00</Time>
+    </Item>
+    <Item>
       <Source>Fonts\FontLarge.spritefont</Source>
       <Name>Fonts\FontLarge</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -118,24 +136,6 @@
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.xnb</Output>
       <Extra>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.wma</Extra>
       <Time>2013-10-20T03:19:21.8088736-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\TitleScreen.png</Source>
-      <Name>Textures\TitleScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\TitleScreen.xnb</Output>
-      <Time>2013-10-23T17:12:56.2182661-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\thanksbird.png</Source>
-      <Name>Textures\thanksbird</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\thanksbird.xnb</Output>
-      <Time>2013-10-23T21:06:24.3554857-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

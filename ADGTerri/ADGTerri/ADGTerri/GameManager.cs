@@ -182,20 +182,38 @@ namespace ADGTerri
 
                         foreach (Collectable col in Levels[currentLevel].Collectables)
                         {
-                            //from left side of collectable
-                            if (gplayer.playerPos.X + gplayer.Width >= col.Position.X &&
-                                gplayer.playerPos.X + gplayer.Width <= col.Position.X + col.Texture.Width)
+                            if (col.Visible)
                             {
-                                if (gplayer.playerPos.Y >= col.Position.Y &&
-                                    gplayer.playerPos.Y <= col.Position.Y + col.Texture.Height)
-                                { 
-                                    //****Place holder actions***
-                                    col.Visible = false;
-                                    gplayer.score += 1;
-
-                                    //Animate collectable pick up?
-                                    //Play pick up sound?
+                                //from left side of collectable
+                                if (gplayer.playerPos.X + gplayer.Width >= col.Position.X &&
+                                    gplayer.playerPos.X + gplayer.Width <= col.Position.X + col.Texture.Width)
+                                {
+                                    if (gplayer.playerPos.Y + (gplayer.Height / 2) >= col.Position.Y &&
+                                        gplayer.playerPos.Y + (gplayer.Height / 2) <= col.Position.Y + col.Texture.Height)
+                                    {
+                                        //****Place holder actions***
+                                        gplayer.score += 10;
+                                        col.Visible = false;
+                                        
+                                        //Animate collectable pick up?
+                                        //Play pick up sound?
+                                    }
                                 }
+
+                                //from right side of collectable
+                                if (gplayer.playerPos.X <= col.Position.X + col.Texture.Width &&
+                                    gplayer.playerPos.X >= col.Position.X)
+                                {
+                                    if (gplayer.playerPos.Y + (gplayer.Height / 2) >= col.Position.Y &&
+                                        gplayer.playerPos.Y + (gplayer.Height / 2) <= col.Position.Y + col.Texture.Height)
+                                    {
+                                        gplayer.score += 10;
+                                        col.Visible = false;
+                                    }
+                                }
+
+                                //from top of collectable
+
                             }
                         }
 
@@ -293,6 +311,9 @@ namespace ADGTerri
             #region Collectables Level 1
 
             level.AddCollectable(Game1.collectableTex, new Vector2(500, Game1.SCREEN_HEIGHT - Game1.collectableTex.Height), true);
+            level.AddCollectable(Game1.collectableTex, new Vector2(143, 159), true);
+            level.AddCollectable(Game1.collectableTex, new Vector2(519, -1210), true);
+            level.AddCollectable(Game1.collectableTex, new Vector2(260, -40), true);
 
             #endregion
         }
