@@ -202,7 +202,7 @@ namespace ADGTerri
 
                 if (!jumping)
                 {
-                    playerPos.Y += 9.8f;
+                    playerPos.Y += 15.8f;
                 }
 
                 #endregion
