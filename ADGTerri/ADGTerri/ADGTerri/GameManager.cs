@@ -160,6 +160,7 @@ namespace ADGTerri
                                             gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
                                         {
                                             gplayer.playerPos.X = obs.Position.X - gplayer.Width;
+                                            gplayer.Momentum = Vector2.Zero;
                                         }
                                     }
 
@@ -171,6 +172,7 @@ namespace ADGTerri
                                             gplayer.playerPos.Y <= obs.Position.Y + obs.Texture.Height)
                                         {
                                             gplayer.playerPos.X = obs.Position.X + obs.Texture.Width;
+                                            gplayer.Momentum = Vector2.Zero;
                                         }
                                     }
                                 }

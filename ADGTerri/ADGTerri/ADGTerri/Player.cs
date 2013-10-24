@@ -118,6 +118,13 @@ namespace ADGTerri
             get { return playerPos; }
         }
 
+        public Vector2 Momentum
+        {
+            get { return momentum; }
+
+            set { momentum = value; }
+        }
+
         public int Width
         {
             get { return playerTexture.Width; }
@@ -175,6 +182,7 @@ namespace ADGTerri
                         jumping = false;
                     }
                 }
+
                 if (!falling)
                 {
                     if (!jumping)
@@ -245,11 +253,19 @@ namespace ADGTerri
                 playerRect = new Rectangle((int)playerPos.X, (int)playerPos.Y, Width, Height);
 
                 if (playerPos.X < 0)
+                {
                     playerPos.X = 0;
+                    momentum = Vector2.Zero;
+                }
                 if (playerPos.Y < floorLevel)
+                {
                     playerPos.Y = floorLevel;
+                }
                 if (playerPos.X + Width > SCREEN_WIDTH)
+                {
                     playerPos.X = SCREEN_WIDTH - Width;
+                    momentum = Vector2.Zero;
+                }
                 if (playerPos.Y + Height > SCREEN_HEIGHT)
                 {
                     playerPos.Y = SCREEN_HEIGHT - Height;
