@@ -35,7 +35,6 @@ C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\AD
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\ADGTerri.application
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.exe.manifest
 C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.application
-C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\collectable.xnb
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\ADGTerri.exe.manifest
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\ADGTerri.application
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\obj\x86\Debug\ADGTerri.exe.manifest
@@ -56,3 +55,6 @@ C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\debugFont.xnb
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.xnb
 C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.wma
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\TitleScreen.xnb
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\thanksbird.xnb
+C:\Users\Cam\Documents\Visual Studio 2010\Projects\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\collectable.xnb

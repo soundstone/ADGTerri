@@ -133,12 +133,18 @@
       <Name>TitleScreen</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Textures\thanksbird.png">
       <Name>thanksbird</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Textures\collectable.png">
+      <Name>collectable</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
