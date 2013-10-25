@@ -100,17 +100,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>n2R1+FD+6eSTCaSBk8x2JA8smus=</dsig:DigestValue>
+        <dsig:DigestValue>R/66cX6FfE78CEzKMZsSuJZh4a4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Content\Fonts\debugFont.xnb" size="20142">
+  <file name="Content\Fonts\debugFont.xnb" size="46254">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>VW5q7hvoVSsp/M3t/RXbF8f7h8w=</dsig:DigestValue>
+      <dsig:DigestValue>Z+iZtvxTNPA9SPNbyyfhrsUgCiE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Fonts\FontLarge.xnb" size="316590">
@@ -237,6 +237,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>oBOhZLtqWszB+eWG2y7/vS5gnJk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Textures\thanksbird2.xnb" size="33115">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>mSnoTbtCWUQZx7Dxzuow4OHEArg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Textures\TitleScreen.xnb" size="1920187">

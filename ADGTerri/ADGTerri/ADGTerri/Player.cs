@@ -27,6 +27,7 @@ namespace ADGTerri
         const int SCREEN_WIDTH = 800;
         const int SCREEN_HEIGHT = 600;
         const int floorLevel = -1325;
+        const float GRAVITY_ACCELERATION = 9.8f;
 
         public PlayerState state;
 
@@ -57,16 +58,19 @@ namespace ADGTerri
         
         #region Physics Variables
 
+        float ground = 0.0f;
+        float angle = 330.0f;
         float elapsed; //keep track of gameTime cycles        
         private Vector2 velocity;
         Vector2 drift;
         const float gravity = 100f;
+        float gravityVelocity = 0f;
         float moveSpeed = 500f;
         Vector2 momentum;
         Vector2 force;
         float mass = 500f;
         private Vector2 fallSpeed = new Vector2(0, 20);
-
+        private Vector2 resistance = new Vector2(2, 0);
         #endregion
 
 
@@ -90,13 +94,13 @@ namespace ADGTerri
 
             animations.Add("idle",
                 new AnimationStrip(
-                    content.Load<Texture2D>(@"Textures\thanksbird"),
-                    28,
+                    content.Load<Texture2D>(@"Textures\thanksbird2"),
+                    27,
                     "idle"));
             animations["idle"].LoopAnimation = true;
             animations.Add("run",
                 new AnimationStrip(
-                    content.Load<Texture2D>(@"Textures\thanksbird"),
+                    content.Load<Texture2D>(@"Textures\thanksbird2"),
                     27,
                     "run"));
             animations["run"].LoopAnimation = true;
@@ -132,13 +136,17 @@ namespace ADGTerri
         {
             if (!Dead)
             {
+                //reset player to idle at the start of every update cycle
                 string newAnimation = "idle";
                 
+                //physics variables
                 elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
                 force = Vector2.Zero;
                 drift = new Vector2((float)Math.Cos(velocity.X) + 2.3f, (float)Math.Sin(velocity.Y));
 
+                //Update player position
                 playerPos += velocity + new Vector2(elapsed, elapsed);
+
                 #region Input
                 #region Moving left / right and Jump
 
@@ -146,23 +154,43 @@ namespace ADGTerri
                 {
                     facing = -1;
                     newAnimation = "run";
+                    
+                    //inertia & momentum
                     force = (drift * 50f) * -1;
                 }
                 else if (InputHelper.IsKeyHeld(Keys.D))
                 {
                     facing = 1;
                     newAnimation = "run";
+                    
+                    //inertia & momentum
                     force = drift * 50f;
                 }
                 else
                 {
                     velocity.X = 0;
+                    force = Vector2.Zero;
+                    if (facing == 1)
+                    {
+                        if (momentum.X >= 0)
+                            momentum -= resistance * 10;
+
+                        if (momentum.X <= 0)
+                            momentum.X = 0;
+                    }
+                    else if (facing == -1)
+                    {
+                        if (momentum.X <= 0)
+                            momentum += resistance * 10;
+                        if (momentum.X >= 0)
+                            momentum.X = 0;
+                    }
                 }
 
                 if (jumping)
                 {
                     playerPos.Y += jumpSpeed;
-
+                    
                     jumpSpeed += 1;
                     if (playerPos.Y >= startY)
                     {
@@ -180,7 +208,6 @@ namespace ADGTerri
                             jumping = true;
                             jumpSpeed = -20;
                             newAnimation = "jump";
-
                         }
                     }
                 }
@@ -192,7 +219,7 @@ namespace ADGTerri
 
                 if (!jumping)
                 {
-                    playerPos.Y += 10.8f;
+                   playerPos.Y += GRAVITY_ACCELERATION;
                 }
 
                 #endregion
@@ -289,10 +316,11 @@ namespace ADGTerri
             base.Update(gameTime);
         }
 
+
+       
         public void DrawPlayer(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(playerTexture, playerPos, Color.White);
-            
+           spriteBatch.Draw(playerTexture, playerPos, Color.White);           
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -312,18 +340,18 @@ namespace ADGTerri
             if (bash)
                 spriteBatch.DrawString(Game1.debugFont, "Peck!", new Vector2(20, 15), Color.Black);
 
-            //Draw Player coordinates
-            spriteBatch.DrawString(Game1.debugFont, "Player pos: \n (" + playerPos.X + "\n, " + playerPos.Y + ")",
-                    new Vector2(SCREEN_WIDTH - 150, 15), Color.Yellow);
             #endregion
-
-            //Draw Timer
-            //  ------------ Level timer here-------------
             
+            DrawHudElements(spriteBatch);
             //Draw Score
-            spriteBatch.DrawString(Game1.debugFont, "Score: " + score.ToString(), new Vector2(SCREEN_WIDTH / 2, 15), Color.Black);
+            spriteBatch.DrawString(Game1.debugFont, "Score: " + score.ToString(), new Vector2(10, 5), Color.Black);
 
             base.Draw(spriteBatch);
+        }
+
+        public void DrawHudElements(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(Game1.SprSinglePixel, new Rectangle(5, 5, Game1.SCREEN_WIDTH, 35), Color.Yellow);
         }
 
         #endregion

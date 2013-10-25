@@ -186,7 +186,7 @@ namespace ADGTerri
         private void DrawTimer(SpriteBatch spriteBatchHUD)
         {
             spriteBatchHUD.DrawString(Game1.debugFont, levelTimer.displayValue,
-                new Vector2(Game1.SCREEN_WIDTH / 2, 30), Color.White);
+                new Vector2(Game1.SCREEN_WIDTH / 2 - 25, 50), Color.White);
         }
         #endregion
 

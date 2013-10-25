@@ -125,7 +125,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Fonts\debugFont.xnb</Output>
-      <Time>2013-10-21T22:41:44.1933992-04:00</Time>
+      <Time>2013-10-24T19:41:28.4359058-04:00</Time>
     </Item>
     <Item>
       <Source>Music\Kalimba.mp3</Source>
@@ -136,6 +136,15 @@
       <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.xnb</Output>
       <Extra>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Music\Kalimba.wma</Extra>
       <Time>2013-10-20T03:19:21.8088736-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\thanksbird2.png</Source>
+      <Name>Textures\thanksbird2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\soundstone\Documents\GitHub\ADGTerri\ADGTerri\ADGTerri\ADGTerri\bin\x86\Debug\Content\Textures\thanksbird2.xnb</Output>
+      <Time>2013-10-24T20:20:25.8405977-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
