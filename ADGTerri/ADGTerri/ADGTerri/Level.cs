@@ -97,6 +97,13 @@ namespace ADGTerri
                 levelTimer.checkTimer(gameTime);
             }
 
+            if (levelTimer.isComplete)
+            {
+                player.Dead = true;
+
+                //levelTimer.Reset();
+            }
+
             //update actors
             for (int i = 0; i < Actors.Count; i++)
             {
@@ -158,9 +165,9 @@ namespace ADGTerri
             backgrounds.Add(new BackgroundItem(texture, position, speed, layerDepth));
         }
 
-        public void AddPlatform(Texture2D tex, Vector2 pos, bool move, float spd)
+        public void AddPlatform(Texture2D tex, Vector2 pos, bool move, float spd, bool victory)
         {
-            platforms.Add(new Platform(tex, pos, move, spd));
+            platforms.Add(new Platform(tex, pos, move, spd, victory));
         }
 
         public void AddObstacle(Texture2D tex, Vector2 pos, bool move, float spd)

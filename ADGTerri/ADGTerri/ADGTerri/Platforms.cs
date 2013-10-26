@@ -37,6 +37,9 @@ namespace ADGTerri
         /// </summary>
         float speed;
 
+        //Victory condition. Set to true on final platform
+        bool victoryPlatform;
+
         public Texture2D Texture
         {
             get { return platformTexture; }
@@ -52,31 +55,39 @@ namespace ADGTerri
             get { return platformPosition; }
         }
 
-        public Platform(Texture2D tex, Vector2 pos, bool move, float spd)
+        public bool Victory
+        {
+            get { return victoryPlatform; }
+        }
+
+        public Platform(Texture2D tex, Vector2 pos, bool move, float spd, bool victory)
         {
             this.platformTexture = tex;
             this.platformPosition = pos;
             this.platformRect = new Rectangle(0, 0, platformTexture.Width, platformTexture.Height);
             this.movePlatform = move;
             this.speed = spd;
+            this.victoryPlatform = victory;
         }
 
-        public Platform(Texture2D tex, Vector2 pos, Rectangle rect, bool move)
+        public Platform(Texture2D tex, Vector2 pos, Rectangle rect, bool move, bool victory)
         {
             this.platformTexture = tex;
             this.platformPosition = pos;
             this.platformRect = rect;
             this.movePlatform = move;
             this.speed = 0;
+            this.victoryPlatform = victory;
         }
 
-        public Platform(Texture2D tex, Vector2 pos, Rectangle rect, bool move, float spd)
+        public Platform(Texture2D tex, Vector2 pos, Rectangle rect, bool move, float spd, bool victory)
         {
             this.platformTexture = tex;
             this.platformPosition = pos;
             this.platformRect = rect;
             this.movePlatform = move;
             this.speed = spd;
+            this.victoryPlatform = victory;
         }
 
         public void Draw(SpriteBatch spriteBatch)

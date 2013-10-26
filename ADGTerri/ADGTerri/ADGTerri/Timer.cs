@@ -26,7 +26,7 @@ namespace ADGTerri
 
         public void Set(GameTime gameTime, float seconds)
         {
-            this.startCount = gameTime.TotalGameTime.Seconds;
+            this.startCount = 1;//gameTime.TotalGameTime.Seconds;
             this.endCount = this.startCount + seconds;
             this.isActive = true;
             this.displayValue = this.endCount.ToString();

@@ -75,6 +75,7 @@ namespace ADGTerri
         public bool Dead
         {
             get { return dead; }
+            set { dead = value; }
         }
 
         #endregion
@@ -321,6 +322,10 @@ namespace ADGTerri
 
                 #endregion
             }
+
+            if (Dead)
+                Respawn();
+
             base.Update(gameTime);
         }
 
@@ -362,6 +367,12 @@ namespace ADGTerri
 
         #endregion
 
+        private void Respawn()
+        {
+            playerPos = new Vector2(0, Game1.SCREEN_HEIGHT);
+            score = 0;
 
+            //gplayer.Dead = false;
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace ADGTerri
         Intro,
         MainMenu,
         HowToPlay,
-        Playing
+        Playing,
+        EndOfLevel
     }
 
     static class GameManager
@@ -42,7 +43,7 @@ namespace ADGTerri
         static Song levelSong;
         
         //start time for Level
-        static float levelOneTime = 20f;
+        static float levelOneTime = 5f ;
 
         #endregion
 
@@ -132,6 +133,9 @@ namespace ADGTerri
                                     gplayer.playerPos.Y = platform.Position.Y - gplayer.Height;
                                     gplayer.startY = gplayer.playerPos.Y;
                                     gplayer.falling = false;
+
+                                    if (platform.Victory && !gplayer.jumping && !gplayer.falling)
+                                        gameState = GameState.EndOfLevel;
                                 }
                                 else
                                 {
@@ -220,6 +224,7 @@ namespace ADGTerri
                         }
 
                         #endregion
+
                         break;
                     }
             }
@@ -257,6 +262,12 @@ namespace ADGTerri
                     CreateLevel();
                     Levels[currentLevel].Draw(spriteBatch, spriteBatchHUD);
                     break;
+
+                case GameState.EndOfLevel:
+                    spriteBatchHUD.Draw(Game1.SprSinglePixel, new Rectangle(0,0, Game1.SCREEN_WIDTH, Game1.SCREEN_HEIGHT), Color.DarkGreen);
+                    spriteBatchHUD.DrawString(Game1.fontLarge, "Level" +"\n" + "Complete!", new Vector2(160, 100), Color.White);
+                    spriteBatchHUD.DrawString(Game1.fontLarge, "Score: " + gplayer.score, new Vector2(160, 320), Color.White);
+                    break;
             }
         }
 
@@ -273,31 +284,31 @@ namespace ADGTerri
             #region Platforms Level 1
 
             level.AddPlatform(Game1.platformSmallTex, new Vector2(50, Game1.SCREEN_HEIGHT - 120),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformMedTex, new Vector2(200, Game1.SCREEN_HEIGHT - 200),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformLargeTex, new Vector2(400, Game1.SCREEN_HEIGHT - 300),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformMedTex, new Vector2(150, Game1.SCREEN_HEIGHT - 400),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformMedTex, new Vector2(400, Game1.SCREEN_HEIGHT - 500),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformLargeTex, new Vector2(250, Game1.SCREEN_HEIGHT - 600),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformMedTex, new Vector2(300, Game1.SCREEN_HEIGHT - 800),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformMedTex, new Vector2(150, Game1.SCREEN_HEIGHT - 950),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformSmallTex, new Vector2(100, Game1.SCREEN_HEIGHT - 1150),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformMedTex, new Vector2(50, Game1.SCREEN_HEIGHT - 1300),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformSmallTex, new Vector2(175, Game1.SCREEN_HEIGHT - 1500),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformSmallTex, new Vector2(200, Game1.SCREEN_HEIGHT - 1670),
-                false, 0f);
+                false, 0f, false);
             level.AddPlatform(Game1.platformSmallTex, new Vector2(500, Game1.SCREEN_HEIGHT - 1770),
-                false, 0f);
+                false, 0f, true);
 
             #endregion
 
